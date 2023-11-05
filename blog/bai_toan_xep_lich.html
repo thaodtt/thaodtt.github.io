@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <title>Nghịch lý Berkson"</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    
+    <!-- Header -->
+	<header>
+        <h1><span>Thao Do</span>'s home page</h1>
+    </header>
+    
+    <!-- Navigation bar-->
+    <nav>
+        <!-- <h3>Navigation menu</h3> -->
+        <ul>
+            <!-- <li><a href="index.html"><span>About</span></a></li> -->
+            <li><a href=../index.html><span>About</span></a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#game">Games</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main section -->
+        <section>
+        <h2>Bài toàn xếp lịch, và lý do ta hay trì hoãn những việc quan trọng</h2>
+        </section>
+        <section>
+        <p>Bạn đã bao giờ gặp phải những tình huống này chưa?</p>
+            <ol>
+                <li>Bạn là chủ tiệm ăn, hàng ngày khách hàng tới quán vào những thời điểm khác nhau, bạn nên phục vụ ai trước? Nếu một khách hàng tới sau một phút nhưng gọi món mất rất ít thời gian chuẩn bị thì bạn có nên phục vụ người đó trước không?</li>
+                <li>Bạn mới đi chợ mua về nào rau củ nào thịt cá. Mỗi loại thực phẩm có hạn sử dụng khác nhau, bạn nên ăn gì trước ăn gì sau cho hợp lý?</li>
+                <li>Sáng thứ hai đầu tuần tới công ty, bạn mở máy tính ra nhìn vào to-do list mà thấy ngán ngẩm, một danh sách dài dằng dặc những việc phải làm. Không biết phải làm việc nào trước, cuối cùng bạn mở điện thoại nhắn tin, lướt facebook... và thế là buổi sáng đi qua mà chưa xong được việc nào.</li>
+                <li>Bạn là sinh viên năm cuối, còn hai tháng nữa là phải hoàn thành khóa luận, nhưng cứ mỗi lần chuẩn bị viết thì bạn lại chần chừ và muốn chuyển qua làm việc khác. Chỉ đến khi gần hết đến hạn nộp bạn mới cuống quít ngồi viết vội viết vàng.</li>
+            </ol>
+        <p>Những vấn đề này trong toán học và khoa học máy tính gọi chung là bài toán xếp lịch (scheduling problem).</p>
+
+        <h3>Bài toán xếp lịch</h3>
+
+            <p>Giả sử ta có n công việc, mỗi việc mất thời gian t_i để hoàn thành, và có m máy với công suất làm việc khác nhau, làm sao xếp lịch máy nào làm công việc nào trước để tổng thời gian từ khi bắt đầu đến khi hoàn thành hết mọi việc là ngắn nhất có thể. Bài toán này có nhiều ứng dụng quan trọng trong khoa học máy tính, vì máy tính thường có nhiều bộ xử lý cùng hoạt động, ứng dụng trong các dây chuyền sản xuất... Ngoài ra ta có thể thêm một số giả thiết như máy phải nghỉ một số thời gian nhất định trước khi bắt đầu việc mới, một số việc phải được thực hiện bởi máy A trước khi cho vào máy B (ví dụ khi giặt quần áo bạn phải cho vào máy giặt trước khi cho vào máy sấy). </p>
+
+            <p>Với các tình huống ta gặp thường ngày như ở trên, chỉ có ta là người duy nhất thực hiện các công việc, do đó bài toán trở thành bài toàn xếp lịch một máy. Nếu ta chỉ quan tâm đến tổng thời gian hoàn thành công viêc thì dù ta chọn làm việc nào trước việc nào sau không quan trọng, tổng thời gian luôn là t_1+t_2+...+t_n. Do vậy ta phải đặt ra các mục tiêu khác.</p>
+
+        <h3>Mục tiêu quyết định thuật toán</h3>
+
+            <p>Quay lại với tình huống số một: bạn là chủ tiệm ăn, anh A tới quán lúc 12h trưa và gọi món cá kho cần 10 phút để chuẩn bị, sau đó một phút chị B bước vào quán và gọi món phở chỉ mất 5 phút chuẩn bị. Bạn nên phục vụ ai trước? Câu trả lời là tùy vào mục tiêu của bạn. </p>
+
+            <p>Gọi 'độ trễ' của một khách hàng là thời gian người đó phải chờ từ lúc bước vào quán đến khi có đồ ăn. Trong ví dụ của ta, nếu ta phục vụ A trước thì độ trễ của A là 10 phút và B là 9+5 = 14 phút. Nếu ta phục vụ B trước thì độ trễ của B là 5 phút và của A là 1+5+10 = 16 phút. </p>
+
+            <p>Nếu mục tiêu của ta là giảm thiểu độ trễ của người phải chờ lâu nhất thì ta nên phục vụ A trước. Tổng quát hơn, thuật toán tối ưu là phục vụ theo thứ tự thời gian đến, hay 'first come first serve'. Đây cũng là cách đa số các cửa hàng hoạt động. Tuy nhiên, nếu ta thay đổi mục tiêu và muốn giảm thiểu tổng độ trễ của tất cả khách hàng, thì ta nên phục vụ B trước vì tổng độ trễ là 16+5 = 21 nhỏ hơn tổng độ trễ khi phục vụ A trước = 10+14 = 24 phút. Tổng quát hơn, nếu các khách hàng đến cùng lúc (hoặc gần thời điểm), ta nên phục vụ khách hàng cần ít thời gian để hoàn thành nhất trước. Nếu các khách hàng đến vào những thời điểm khác nhau, bài toán này trở thành rất khó, khó theo nghĩa chưa ai tìm ra thuật toán giải trong thời gian chấp nhận được.</p>
+
+            <p>Tương tự với tình huống đồ ăn trong tủ lạnh, độ trễ ở đây bằng thời gian quá hạn sử dụng của một thực phẩm, độ trễ bằng 0 nếu ta ăn hết thực phẩm đó trước hạn sử dụng. Nếu ta đặt mục tiêu giảm thiểu thời gian quá hạn sử dụng lớn nhất của một thực phẩm, thì ta nên ăn đồ có hạn sử dụng gần nhất trước (ví dụ ăn đậu hũ tươi trước khi ăn thịt đông lạnh). Tuy nhiên, nếu ta muốn giảm thiểu tổng số lượng thực phẩm quá hạn (đỗ trễ >0), hoặc tổng thời gian quá hạn sử dụng, thì ta nên ăn thực phẩm ta có thể ăn hết trong thời gian nhanh nhất (ví dụ một cây súp lơ ăn ba bữa mới hết, còn rau muống ăn một bữa là hết thì ta nên ăn rau muống trước súp lơ).</p>
+
+        <h3>Tại sao ta hay trì hoãn những việc quan trọng?</h3>
+
+            <p>Với tình huống số ba và bốn, khi ta có một danh sách các công việc, nếu việc có hạn (deadline) thì ta có thể áp dụng các thuật toán tương tự như tình huống số một và hai, bằng cách đặt độ trễ bằng thời gian quá hạn của từng công việc. Nhưng nếu các việc không có hạn (ví dụ như viết truyện, đăng kí lớp học yoga), hoặc hạn rất xa thời gian hiện tại (ví dụ như khi ta có cả học kì để viết bài luận) thì sao?</p>
+
+            <p>Ta có thể đặt mục tiêu hoàn thành nhiều công việc nhất có thể tại mỗi thời điểm. Với mục tiêu này thuật toán tối ưu là làm việc mất ít thời gian nhất trước, tương tự như cách ta nên phục vụ khách hàng cần ít thời gian của ta nhất, hay ăn đồ ăn nhanh hoàn thành nhất. Thi thoảng các sách self-help, bí kíp quản lý thời gian có đặt ra một số luật như luật một phút: nếu việc nào mất ít hơn một phút để hoàn thành thì hãy làm ngay bây giờ. Luật một phút là một cách tốt để ghi nhớ thuật toán tối ưu của chúng ta, việc nào tốn ít thời gian nhất thì ta nên làm trước.</p>
+
+            <p>Thuật toán này có nhiều lợi ích, và cũng là một cách làm tự nhiên với nhiều người. Tuy nhiên, thuật toán chưa tính đến chuyện có những việc quan trọng hơn những việc khác. Trên thực tế, những việc quan trọng thường mất nhiều thời gian để hoàn thành hơn, và có lẽ đó là lý do ta hay trì hoãn những việc quan trọng. Làm sao để khắc phục điều này?</p>
+
+        <h3>Làm sao để bớt trì hoãn những việc quan trọng?</h3>
+
+            <p>Một cách đơn giản là thay đổi mục tiêu. Thay vì cố gắng hoàn thành nhiều công việc nhất có thể, ta nên đặt mục tiêu giảm nhẹ gánh nặng nhất có thể tại mỗi thời điểm, ở đây gánh nặng sau khi hoàn thành một công việc đo bằng độ quan trọng của nó. Giả sử ta có n công việc, công việc thứ i mất t_i thời gian để hoàn thành và độ quan trọng q_i. Gọi tỉ lệ q_i/t_i là tỉ lệ quan trọng. Với mục tiêu mới này, thuật toán tối ưu là làm việc có tỉ lệ quan trọng lớn nhất trước. Với các công việc có tính tiền theo giờ như luật sư, chuyên gia tư vấn..., tỉ lệ quan trọng có thể đo bằng giá lương theo giờ, và theo thuật toán này, các luật sư chuyên gia tư vấn nên ưu tiên làm đề án trả lương theo giờ cao nhất trước.</p>
+
+            <p>Ví dụ như ở hình dưới đây, ta có ba công việc: email sếp, thời gian 2 phút, độ quan trọng 5, mời sinh nhật thời gian 5 phút độ quan trọng 1, và viết báo cáo thời gina 30 phút độ quan trọng 10. Theo thuật toán làm việc ngắn nhất trước, ta sẽ làm thứ tự 1-2-3, nhưng theo thuật toán mới, do các tỉ lệ quan trọng lần lượt là 5/2, 1/5 và 10/30, ta nên làm theo thứ tự 1-3-2. </p>
+            
+            <figure class="blog-photo">
+                <img src="image/bai_toan_xep_lich.jpeg" alt="bai toan xep lich">
+            </figure>
+            
+            <p>Ngoài ra nếu mỗi công việc yêu cầu mức độ tập trung khác nhau (ví dụ nhắn tin mời sinh nhật cần ít độ tập trung hơn viết email) thì ta có thể sửa mục tiêu thành giảm nhẹ gánh nặng dùng ít năng lượng nhất tại mỗi thời điểm. Giả sử công việc i mất thời gian t_i, độ quan trọng q_i và mất n_i năng lượng, thì thuật toán tối ưu mới sẽ là: làm việc có tỉ lệ q_i/(n_i*t_i) cao nhất</p>
+
+            <p>Nếu bạn thấy việc tính toán độ quan trọng của mỗi công việc quá khó, thì một cách đơn giản hơn để tránh trì hoãn những việc quan trọng là đặt hạn cho những công việc này. Khi có thời hạn, mục tiêu của chúng ta sẽ thay đổi một cách tự nhiên, và ta sẽ có xu hướng làm những việc sắp hết hạn nhất.</p>
+
+        <h3>Kết</h3>
+
+            <p>Túm lại thì, làm gì cũng phải có mục tiêu, mục tiêu đúng thì ta sẽ dễ hoạt động theo cách ta mong muốn hơn. Khi phải quyết định phục vụ khách hàng nào trước, ta nên nghĩ xem ta muốn chiều lòng khách hàng phải chờ lâu nhất, hay chiều lòng tất cả các khách hàng. Khi có việc khó mà ta muốn trì hoãn, hãy tự hỏi việc đó quan trọng thế nào, tốn bao nhiêu thời gian, bao nhiêu năng lượng trước khi quyết định nên làm việc đó trước hay những việc khác dễ hơn. </p>
+
+        <h3>Tài liệu tham khảo</h3>
+        <ol>
+            <li><a href=https://www.goodreads.com/book/show/25666050-algorithms-to-live-by>Algorithms to live by</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Job_shop_scheduling>Job shop scheduling</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Single-machine_scheduling>Single machine scheduling</a></li>
+        </ol>
+        </section>
+    </body>
+</html>

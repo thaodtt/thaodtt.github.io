@@ -1,0 +1,167 @@
+/* CSS - Cascading Style Sheet */
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=12g0u0kllllaFw0g0qFqFg0w0aF */
+
+:root {
+    --color0: #AA6E39;
+    --color1: #FFD2AA;
+    --color2: #D49C6A;
+    --color3: #804715;
+    --color4: #552800;
+    --colorhighlight: rgb(160, 9, 9);
+}
+
+body {
+    color:rgb(3, 35, 62);
+    background-color: antiquewhite;
+    padding: 10px;
+    border: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+}
+header, nav, section, article, aside, footer {
+    display: block;
+    margin: 20px;
+}
+
+header, footer, nav {
+    text-align:center;
+    background-color: var(--color2);
+    clear: both;
+  }
+span{
+    color: var(--colorhighlight);
+}
+header h1 {
+    padding: 20px;
+}
+
+/* navigation */
+nav {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+nav li {
+    display: inline;
+    text-align: center;
+    float: left;
+    margin: 0 15px;
+}
+nav li:first-child {
+    margin-left: 0
+}
+nav li a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+  }
+section {
+    float: left;
+}
+
+section h2{
+    color: var(--colorhighlight);
+}
+
+section h3{
+    background-color: var(--color2);
+    padding: 20px;
+    clear: both;
+}
+section p {
+    padding: 5px;
+}
+section ul {
+    margin: 50px;
+    /* background-color: var(--color0); */
+}
+section ul li {
+    list-style-type: circle;
+    /* margin: 5px; */
+    padding: 5px;
+}
+section ol li {
+    padding: 5px;
+}
+section li:hover {
+    background-color: var(--color2);
+}
+#about {
+    display: block;
+    width: 50%;
+}
+#personal_photo img{
+    display: block;
+    width: 40%;
+    float: right;
+    /* padding: 20px; */
+    margin-left: 0;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.blog-photo img{
+    display: block;
+    width: 50%;
+    float: right;
+    padding: 20px 0px 30px 20px;
+    margin-right: -10px;
+}
+section a {
+    color: var(--colorhighlight)
+}
+footer {
+    background-color: var(--color2);
+    /* padding: 20px; */
+}
+footer ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+footer li {
+    display: inline;
+    /* text-align: center; */
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+.fa:hover {
+      opacity: 0.7;
+}
+  
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}

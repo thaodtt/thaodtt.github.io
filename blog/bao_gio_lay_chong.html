@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <title>Nghịch lý Berkson"</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    
+    <!-- Header -->
+	<header>
+        <h1><span>Thao Do</span>'s home page</h1>
+    </header>
+    
+    <!-- Navigation bar-->
+    <nav>
+        <!-- <h3>Navigation menu</h3> -->
+        <ul>
+            <!-- <li><a href="index.html"><span>About</span></a></li> -->
+            <li><a href=../index.html><span>About</span></a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#game">Games</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main section -->
+        <section>
+        <h2>Bao giờ lấy chồng? bài toán tuyển thư kí và các mở rộng</h2>
+        </section>
+        
+        <section>
+            <p>Trong cuộc sống đầy rẫy sự ngẫu nhiên, đôi khi bạn phải đưa ra quyết định khi chưa có đủ thông tin: có nên kết hôn với người yêu hiện tại hay chờ người tốt hơn? có nên mua căn nhà này hay chờ xem có căn nhà nào tốt hơn trong tương lai? có nên bán nhà với giá này hay chờ người trả giá cao hơn? có nên tuyển nhân viên này hay phỏng vấn thêm người khác? có nên làm việc cho công ty này hay phỏng vấn thêm với các công ty khác?</p>
+
+            <p>Những bài toán này gọi chung là bài toán điểm dừng tối ưu: quyết định dừng khi nào khi mà ta không biết cái mình đang có hiện tại có phải tối ưu không. Các nhà toán học mô phỏng tính huống này qua bài toán tuyển thư kí.</p>
+
+        <h3>Bài toán tuyển thư kí</h3>
+            
+            <p>Hãy tưởng tượng bạn mới được thăng chức làm trưởng phòng, và muốn tìm một thư kí tốt nhất với bạn. Giả sử:</p>
+            <ol>
+                <li>Có n người ứng tuyển và bạn phỏng vấn họ theo một thứ tự ngẫu nhiên.</li>
+                <li>Bạn không biết một ứng viên tốt thế nào so với mặt bằng chung, chỉ thể so sánh hai ứng viên sau khi đã phỏng vấn cả hai (như vậy bạn không thể biết ai là người tốt nhất trừ khi đã phỏng vấn tất cả n người).</li>
+                <li>Bạn có thể nhận một ứng viên  ngay sau khi phỏng vấn và ứng viên  đó sẽ đồng ý nhận việc.</li>
+                <li>Nếu bạn không nhận một ứng viên ngay sau khi phỏng vấn, ứng viên  đó sẽ ra về và không bao giờ quay lại nữa.</li>
+            </ol>
+            <figure class="blog-photo">
+                <img src="image/bao_gio_lay_chong.jpeg" alt="Hình ảnh các chàng trai ta gặp trong cuộc đời">
+            </figure>
+            
+            <p>Cái khó của bài toán này là: nếu ta nhận sớm quá (ví dụ sau khi phỏng vấn 2,3 người đã chọn ngay) thì nhiều khả năng ta bỏ lỡ những ứng viên tiềm năng tới sau. Nếu ta nhận muộn quá (chờ đến khi chỉ còn 2, 3 người) thì nhiều khả năng người tốt nhất đã đi qua và ta đã bỏ lỡ cơ hội. Vậy thì phải làm sao để cân bằng hai điều này? Toán học đã chứng minh cách làm tối ưu nhất là bỏ qua 37% ứng viên đầu tiên, sau đó chọn người đầu tiên tốt hơn tất cả những người mà bạn đã phỏng vấn từ trước tới nay. Với cách làm này, bạn có xác suất 37% tìm được người thư kí tốt nhất. Tại sao lại là 37%? 37%=1/2.718=1/e, các bạn muốn tìm hiểu công thức cụ thể đưa ra đáp số này có thể xem thêm ở đây.</p>
+            
+        <h3>Các bài toán mở rộng</h3>
+
+            <p>Trong thực tế không phải lúc nào ta cũng có tất cả các điều kiện 1-5, khi đó bài toán sẽ thay đổi thế nào?</p>
+
+            <p>Mở rộng giả thiết (1): trong nhiều tình huống, ta không thể biết n là bao nhiêu. Ai có thể nói trước là mình sẽ gặp và yêu bao nhiêu chàng trai, cô gái trong cuộc đời này. Khi đi mua nhà, làm sao biết bạn sẽ xem được bao nhiêu căn nhà, và tương tự khi bán nhà bạn khó biết sẽ có tất cả bao nhiêu người muốn mua. Để khắc phục điều này, một cách ta có thể làm là ước lượng theo thời gian. Ví dụ với tình yêu, ta có thể giả sử ta sẽ bắt đầu yêu từ tuổi 18 cho tới tuổi 34, như vậy sau 37% thời gian, tức là sau 24 tuổi, bạn hãy kết hôn với người tốt hơn những người yêu cũ. Khi đi mua nhà/bán nhà, bạn có thể cho mình thời gian tối đa để tìm người bán/mua là 1 năm, như vậy sau 37% = bốn tháng rưỡi, bạn sẽ bắt đầu chọn nhà tốt nhất/người mua trả giá cao nhất cho tới nay.</p>
+
+            <p>Mở rộng giả thiết (2): nếu bạn có thể biết một ứng viên tốt thế nào so với những người khác thì khả năng thành công của bạn sẽ cao hơn. Ví dụ, bạn muốn lấy đại gia, với bạn người tốt nhất là người có nhiều tiền nhất. Hơn thế, bạn cũng đã tìm hiểu tài sản/lương trung bình ở thành phố của bạn, như vậy khi gặp một người, bạn sẽ biết ngay người đó thuộc top 1%, hay 10%, hay 50% đại gia. Khi đó thuật toán tối ưu của bạn là: tại mỗi thời điểm, kết hôn với người có tài sản/lương cao hơn tài sản kì vọng của số ứng viên còn lại.  Ví dụ, nếu bạn đã lớn tuổi, đang yêu một người và chỉ có thời gian yêu thêm một người nữa, thì bạn sẽ cưới người yêu hiện tại nếu tài sản của họ trên trung bình. Nếu bạn còn trẻ và có thể yêu 5 người nữa, thì bạn sẽ cưới người yêu hiện tại nếu họ có tài sản trong top 10%. Tất nhiên phương pháp này không tính đến chuyện một người nghèo bây giờ có thể giàu lên trong tương lai hoặc ngược lại. Những yếu tố khác như sự xinh đẹp, rộng lượng, tính hài hước... khó đong đếm hơn (ngoại trừ chiều cao, cân nặng), nhưng bạn vẫn có thể ước lượng những yếu tố này dựa trên kinh nghiệm bản thân. Thuật toán này cũng hiệu quả cho việc bán nhà vì thường tiêu chí quan trọng nhất của bạn là tìm được người trả giá cao nhất, nhưng kém hiệu quả hơn khi mua nhà, vì tương tự như tìm ý chung nhân, một căn nhà lý tưởng có nhiều yếu tố khó đong đếm.</p>
+
+            <p>Mở rộng giả thiết (3): không phải lúc nào người mình muốn cưới cũng muốn cưới mình. Trong trường hợp này, bạn nên từ chối ít người lúc đầu hơn và bắt đầu cầu hôn sớm hơn vì có khả năng bạn sẽ phải cầu hôn nhiều người trước khi được chấp nhận. Ví dụ, nếu người bạn cầu hôn chỉ chấp nhận với xác suất 50% thì bạn nên bắt đầu cầu hôn sau khi gặp 25% người. </p>
+
+            <p>Mở rộng giả thiết (4): bạn có thể quay lại cầu hôn người yêu cũ. Chuyện này không phải hiếm, có nhiều người sau khi chia tay và yêu một vài người khác mới nhận ra người yêu cũ là tốt nhất. Trong trường hợp này, bạn có thể từ chối nhiều người lúc đầu hơn và bắt đầu cầu hôn muộn hơn. Ví dụ nếu bạn có thể cầu hôn với một người yêu cũ và người đó sẽ chấp nhận với xác suất 50% thì bạn nên bắt đầu cầu hôn sau khi đã gặp 61% người.</p>
+
+        <h3>Kết</h3>
+
+            <p>Trong thí nghiệm, các nhà tâm lý học thấy đa số mọi người chấp nhận sớm hơn 37%, có lẽ vì chờ đợi có giá của nó (phụ nữ nhan sắc giảm theo thời gian, nhà để lâu sẽ mất tiền tu sửa tân trang...). Tuy nhiên, nếu chấp nhận quá sớm trước khi chưa biết mình muốn gì, bạn có thể sẽ có nhiều nuối tiếc sau này. Lần tiếp theo đi mua nhà, mua xe, bán nhà, bán xe... bạn hãy thử áp dụng nguyên tắc 37% xem có hiệu quả không nhé: từ chối tất cả 37% cơ hội đầu tiên, sau đó chọn cơ hội đầu tiên tốt hơn tất cả những cơ hội trước đó.</p>
+
+        <h3>Tài liệu tham khảo</h3>
+            <ol>
+            <li><a href=https://www.goodreads.com/book/show/25666050-algorithms-to-live-by>Algorithms to live by</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Secretary_problem>Secretary problem</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Optimal_stopping >Optimal stopping</a></li>
+            </ol>
+        </section>
+    </body>
+</html>

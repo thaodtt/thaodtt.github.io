@@ -1,25 +1,67 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-.caption{
-display:block;
-}
-.contact{
-display:block;margin-left: 100px; margin-right:20%;
-float:left;
-}
-h1{text-align:center;font-size:30px;}
-h2{text-align:center; font-size:20px;}
-p{font-size:16px;}
-</style>
-
+    <meta charset="utf-8"/>
+	<title>Thao Do Website</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<h1> Thao Do's homepage </h1>
-  <p> https://math.mit.edu/~thaodo/ </p>
 
+<!-- Header -->
+	<header>
+	<h1><span>Thao Do</span>'s home page</h1>
+</header>
 
+<!-- Navigation bar-->
+<nav>
+    <!-- <h3>Navigation menu</h3> -->
+	<ul>
+		<!-- <li><a href="index.html"><span>About</span></a></li> -->
+		<li><a href=index.html><span>About</span></a></li>
+		<li><a href="#blog">Blog</a></li>
+		<li><a href="#game">Games</a></li>
+	</ul>
+</nav>
+
+<!-- Main section -->
+
+<figure id="personal_photo">
+	<img src="thao.jpg" alt="photo of Thao">
+</figure>
+
+<section id="about">
+	<!-- <h3><span>About</span></h3> -->
+	<p>My name is Thao. I like to learn new things. This website is my playground to experiment with web development.</p>
+</section>
+
+<section id="blog">
+	<h3>Blog</h3>
+	<p>Here are some posts that I orginally wrote for <a href="https://www.masspvn.org/en">MaSSP</a>, a math and science summer camp in Vietnam that I co-founded with some friends while in school.</p>
+	<ul>
+		<li><a href="blog/nghich_ly_berkson.html">Nghịch lý Berkson</a></li>
+		<li><a href="blog/bao_gio_lay_chong.html">Bao giờ lấy chồng</a></li>
+		<li><a href="blog/bai_toan_xep_lich.html">Bài toàn xếp lịch</a></li>
+		<li><a href="blog/li_xi_dau_nam.html">Lì xì đầu năm</a></li>
+		<li><a href="blog/hom_nay_an_gi.html">Hôm nay ăn gì</a></li>
+	</ul>
+</section>
+
+<section id="game">
+	<h3>Games</h3>
+	<p>We will make some games and insert the link to play them here</p>
+</section>
+
+<!-- Footer -->
+<footer>
+	<ul>
+		<li><a href="#" class="fa fa-linkedin"></a></li>
+		<li><a href="#" class="fa fa-instagram"></a></li>
+		<li><a href="#" class="fa fa-facebook"></a></li>
+		<li><a href="#" class="fa fa-youtube"></a></li>
+	</ul>
+</footer>
 </body>
 </html>

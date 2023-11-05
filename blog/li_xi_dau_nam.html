@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <title>Lì xì đầu năm"</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <!-- Header -->
+	<header>
+        <h1><span>Thao Do</span>'s home page</h1>
+    </header>
+    
+    <!-- Navigation bar-->
+    <nav>
+        <!-- <h3>Navigation menu</h3> -->
+        <ul>
+            <!-- <li><a href="index.html"><span>About</span></a></li> -->
+            <li><a href=../index.html><span>About</span></a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#game">Games</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main section -->
+        <section>
+        <h2>Lì xì đầu năm, và câu hỏi có nên chơi xổ số hay mua bảo hiểm?</h2>
+        </section>
+        <section>
+            <p>Đầu xuân năm mới bạn đến chúc tết một nhà toán học. Khi bạn xin lì xì, nhà toán học cho bạn hai lựa chọn như sau:</p>
+            <ul>
+                <li>Lì xì A chứa 240 ngàn.</li>
+                <li>Lì xì B, với xác suất 25% chứa 1 triệu, và 75% xác suất không chứa gì cả.</li>
+            </ul>
+            <figure class="blog-photo">
+                <img src="image/bao_li_xi.jpeg" alt="Hình ảnh hai bao lì xì">
+            </figure>
+            
+            <p>Bạn sẽ chọn bao lì xì nào? Là một người yêu toán, bạn liền ngồi nhẩm tính, lì xì B có kì vọng (expectation) bằng 25% x 1 triệu + 75% x 0 = 250 ngàn, cao hơn kì vọng của lì xì A 10 ngàn đồng. Nhưng liệu 10 ngàn đồng ấy có đủ để bạn chấp nhận rủi ro 75% không nhận được đồng nào?</p>
+
+            <p>Sau đó, con gái nhỏ của nhà toán học chạy ra xin lì xì của bạn, và cũng cho bạn hai lựa chọn:</p>
+            <ul>
+                <li>Lì xì C: bạn sẽ phải lì xì 740 ngàn đồng.</li>
+                <li>Lì xì D: bạn có 25% cơ hội không phải lì xì, và 75% phải lì xì 1 triệu.</li>
+            </ul>
+
+            <p>Một lần nữa, bạn vận dụng kiến thức toán học của mình, và ngồi tính kì vọng của mỗi lựa chọn. Kì vọng của lựa chọn C là -740 ngàn, và của D là 25% x0 + 75% x(-1 triệu) = -750 ngàn. Như vậy lựa chọn C có kì vọng cao hơn 10 ngàn, nhưng nếu chọn C, bạn chắc chắn sẽ mất tiền, còn nếu chọn D bạn có 25% cơ hội không mất gì cả.</p>
+
+            <p>Nếu bạn chọn lì xì A ở tình huống thứ nhất, và lì xì D ở tình huống thứ hai, thì bạn đã thuộc về số đông. Khi thực hiện thí nghiệm này, các nhà nghiên cứu thấy rằng hơn 70% số người tham gia chọn A và D, mặc dù hai lựa chọn này không tối ưu về mặt kì vọng. Điều này có thể được giải thích qua hiện tượng mà các nhà tâm lý/kinh tế học gọi là muốn tránh rủi ro và tránh mất mát. Ở tình huống thứ nhất, lựa chọn A hấp dẫn hơn vì không có rủi ro gì cả, dù kì vọng ít tiền hơn một chút. Ở tình huống thứ hai, lựa chọn D giúp bạn có 25% cơ hội không bị mất mát gì, do vậy có phần hấp dẫn hơn là chấp nhận mất tiền với xác suất 100%.</p>
+
+            <p>Vậy thì có gì sai không khi chọn A và D? Tuy không tối ưu về mặt toán học, nhưng việc tránh rủi ro, không thích mất mát cũng là chuyện bình thường mà đúng không? Điều này có thể đúng khi bạn xem xét hai tình huống riêng biệt, nhưng nếu ta gộp hai tình huống để xem sau khi rời khỏi nhà của nhà toàn học bạn sẽ thu được gì thì sao?</p>
+            <ul>
+                <li>Lì xì A+D: bạn chắc chắn nhận được 240 ngàn, nhưng với xác suất 75% mất đi một triệu, như vậy bạn có 75% mất 760 ngàn, và 25% được 240 ngàn.</li>
+                <li>Lì xì B+C: bạn  chắc chắn mất 740 ngàn, nhưng nhận được 1 triệu với xác suất 25%, như vậy bạn có 75% mất 740 ngàn, và 25% được 260 ngàn</li>
+            </ul>
+
+            <p>Rõ ràng là lựa chọn  B+C tốt hơn A+D về mọi mặt, vậy tại sao ta lại chọn A và D?</p>
+
+            <p>Lưu ý là trong ví  dụ này, những con số 25%, 250 ngàn, một triệu, có ảnh hưởng đến việc quyết định. Nếu ta thay 25% bằng một xác suất rất nhỏ như 1% hay rất lớn như 99%, hay thay một triệu bằng 100 triệu, thì bài toán sẽ trở nên hoàn toàn khác. Và tất nhiên, nếu rơi vào trường hợp này trong thực tế,  có lẽ nhiều bạn đã cuốn gói chạy khỏi nhà nhà toán học khi bị cô con gái lém lỉnh đòi lì xì rồi. Tuy nhiên, ta không thể phủ nhận thí nghiệm này cho thấy con người nhiều khi không hành động theo logic.</p>
+
+        <h3>Có nên mua bảo hiểm, chơi xổ số?</h3>
+
+            <p>Tâm lý con người không phải lúc nào cũng làm việc theo toán học. Ta chọn mua bảo hiểm y tế dù biết xác suất bị bệnh nghiêm trọng là rất nhỏ, tính ra kì vọng số tiền nhận được nhỏ hơn tiền phí đóng bảo hiểm hàng tháng, vì ta biết có bảo hiểm tâm lý sẽ thoải mái hơn, tránh được tổn thất lớn trong trường hợp lâm bệnh trầm trọng. Ta mua xổ số dù biết xác suất trúng thưởng rất thấp, kì vọng thu được nhỏ hơn tiền vé xổ số rất nhiều, nhưng nó cho ta hi vọng, cho ta có quyền mơ mộng về một cơ hội đổi đời. </p>
+
+            <p>Tâm lý này có thể không có tổn hại gì nhiều nếu ta chỉ mua xổ số một vài lần, nhưng nếu ta chơi hàng tháng, hàng năm thì gần như chắc chắn ta sẽ thua tiền (trừ một số rất ít người trúng giải độc đắc). Đánh bạc ở casino, hay các hình thức cá cược khác cũng như vậy. Nếu ta chỉ đi máy báy một lần thì việc mua bảo hiểm cho vé máy bay để có được tâm lý thoải mái là rất hợp lý, nhưng nếu mỗi năm ta bay hơn chục lần và lần nào cũng mua bảo hiểm khi mà xác suất bị ốm hay nhỡ chuyến bay rất nhỏ, thì ta đã lãng phí một khoản tiền không nhỏ rồi. Khi quyết định có nên mua cổ phiếu của một công ty hay đầu tư vào một cơ hội kinh doanh nào đấy, nếu ta chỉ đầu tư một lần thì việc chọn chỗ ít rủi ro là hợp lý, nhưng nếu ta đầu tư nhiều lần, thì chấp nhận rủi ro có thể mang lại lợi nhuận lớn hơn về lâu dài.</p>
+
+        <h3>Học toán làm gì?</h3>
+
+            <p>Thi thoảng lại có người hỏi mình học toán để làm gì, nếu bạn không theo học các ngành kĩ thuật, kinh tế, không cần dùng đến các tính toán phức tạp trong công việc, thì học toán có ích gì? một lý do đơn giản là, học toán để có thể đưa ra những quyết định đúng đắn. Với mỗi tình huống riêng lẻ, bạn có thể chọn cách không tối ưu (về mặt toán học), nhưng theo luật của số lớn, vì cuộc sống là một chuỗi dài các quyết định, nếu mỗi lần bạn đều làm không tối ưu, thì tích tiểu thành đại, sẽ có lúc bạn nhận ra mình đã lãng phí quá nhiều thời gian hoặc tiền của rồi. Vậy thì, lần tiếp theo bạn quyết định có nên mua bảo hiểm, chơi xổ số, đầu tư kinh doanh..., hi vọng các bạn sẽ tỉnh táo suy nghĩ như một nhà toán học nhé!</p>
+
+        <h3>Tài liệu tham khảo</h3>
+        <ol>
+            <li><a href=https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow>Thinking fast and slow</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Risk_aversion>Risk aversion</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Loss_aversion>Loss aversion</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Law_of_large_numbers>Law of large numbers</a></li>        
+        </ol>
+    </section>
+    </body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <title>Hôm nay ăn gì"</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    <!-- Header -->
+	<header>
+        <h1><span>Thao Do</span>'s home page</h1>
+    </header>
+    
+    <!-- Navigation bar-->
+    <nav>
+        <!-- <h3>Navigation menu</h3> -->
+        <ul>
+            <!-- <li><a href="index.html"><span>About</span></a></li> -->
+            <li><a href=../index.html><span>About</span></a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#game">Games</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main section -->
+        <section>
+        <h2>Hôm nay ăn gì, và giải thích toán học cho việc "đứng núi này trông núi nọ"</h2>
+
+        <p>Một buổi tối thứ bảy mát mẻ, bạn cùng mấy đứa bạn thân băn khoăn câu hỏi muôn thuở: "hôm nay ăn gì?" Nên tới quán phở quen thuộc cạnh nhà, hay thử quán phở cuốn mới mở đầu ngõ, hay tới quán mý Ý mới thử một lần. Quán phở bạn đã ăn nhiều lần và phần lớn là ngon (7/10), quán phở cuốn mới mở, chưa biết là sẽ ngon hơn hay dở hơn. Còn quán mý Ý bạn mới tới một lần và chất lượng tạm được (6/10). Bạn muốn tận hưởng đồ ăn ngon hàng ngày nên sẽ quá rủi ro nếu mỗi ngày đều đi thử quán mới, nhưng nếu không thử cái mới thì bạn có thể sẽ bỏ lỡ nhiều món ngon. Vậy thì làm sao để cân bằng giữa "tận hưởng" và "khám phá" (exploit vs explore)?</p>
+        <figure class="blog-photo">
+            <img src="image/hom_nay_an_gi.jpeg" alt="Hình ảnh 3 món ăn để lựa chọn">
+        </figure>
+        
+        <p>Trong cuộc sống bạn sẽ còn gặp nhiều tình huống tương tự: đến quán ăn rồi không biết nên chọn món quen thuộc hay thử món mới, đi xem phim nên chọn thể loại phim mình yêu thích hay thử một phim kiểu khác, đi chơi nên đến thành phố yêu thích hay đi thành phố khác... Trong y học, các bác sĩ đôi khi phải quyết định cho bệnh nhân dùng phương pháp điều trị quen thuộc hay thử một phương pháp điều trị mới chưa được kiểm nghiệm kĩ càng nhưng có tiềm năng. Trong công nghiệp, các công ty đôi khi phải chọn giữa việc tiếp tục sản xuất/bán những sản phẩm đang bán chạy, hay thử những sản phẩm mới. </p>
+        <h3>Bài toàn bandit</h3>
+        <p>Trong toán học và khoa học máy tính có một bài toán nổi tiếng mô phỏng vấn đề này: bài toán bandit. Bandit ở đây là chỉ máy chơi slot ở casino. Giả sử bạn đi vào một casino có 10 máy chơi, mỗi máy có một phân bố giải thưởng khác nhau (ví dụ máy thứ nhất với xác suất 1/101 cho ra phần thưởng 100 ngàn đồng, 1/1500 cho ra phần thưởng 1 triệu đồng, còn lại bị mất 1 ngàn đồng phí chơi, máy thứ hai cho ra phần thưởng 10 ngàn đồng với xác suất 1/5, còn lại bị mất 500 đồng phí chơi). Bạn được chơi n lần, mỗi lần bạn chọn một máy bất kì và nhận được phần thưởng từ máy đó. Bạn nên chơi thế nào để có tổng phần thưởng cao nhất? </p>
+
+        <p>Một cách đơn giản là bạn dành ra một thời gian nhất định (ví dụ n/10 lần đầu tiên) chơi thử tất cả các máy, chọn máy cho bạn tổng phần thưởng cao nhất rồi thời gian còn lại (ví dụ 9n/10 lần còn lại) bạn chỉ chơi máy đó. Cách này nghe cũng có lý: bạn đi ăn thử tất cả các hàng một lần, rồi hàng nào ngon nhất thì từ đó về sau chỉ ăn ở đó. Tuy nhiên, vì chất lượng mỗi quán không phải cố định mà thường là một phân bố ngẫu nhiên (tùy thời điểm bạn đến, tùy món bạn chọn), nếu bạn bỏ qua một quán chỉ vì họ nấu dở một bữa thì có phí quá không? Hay quán bạn nghĩ là ngon nhất những ngày sau đó hóa ra lại không ngon lắm thì sao? Ngoài ra có cả trăm quán xung quanh bạn, nếu bạn thử hết một lượt thì cũng đã quá mất cả trăm ngày phải chịu rủi ro ăn đồ mới không ngon rồi.</p>
+
+        <p>Vậy có cách nào tốt hơn? Thuật toán tối ưu được chứng minh là có tồn tại bởi Gittins vào năm 1979. Tại mỗi thời điểm mỗi máy sẽ có một giá trị nhất định, gọi là chỉ số Gittins. Lúc bắt đầu các máy đều có giá trị như nhau và ta chọn ngẫu nhiên một máy. Sau đó tùy theo giải thưởng nhận được, ta thay đổi chỉ số Gittins của máy đó, và những lần chơi tiếp theo mỗi lần ta chọn máy có chỉ số Gittins cao nhất. Ví dụ ban đầu các máy có chỉ số 0.6, chọn máy số 1, nếu giải thưởng là 10, ta thay đổi chỉ số của máy 1 bằng 0.5, nếu giải thưởng là -10 chỉ số mới bằng 0.1). Lưu ý là dù máy ta chọn có cho giải thưởng cao, vì ta chưa chắc chắn đó có phải là giá trị cao nhất không, chỉ số Gittins sẽ giảm đi để ta thử những máy khác nữa. Chỉ khi máy đó cho ta giải thưởng cao nhiều lần liên tiếp, chỉ số Gittins của nó mới đủ cao để ta không bao giờ muốn thử máy khác nữa. Điều này phần nào giải thích tại sao con người hay đứng núi này trông núi nọ, vì núi nọ là núi ta chưa thử bao giờ, nên chỉ số Gittins của nó thường cao hơn, dù chưa chắc giá trị thực sự của nó đã cao hơn núi mà mình đang có. </p>
+
+        <h3>Cân bằng tận hưởng và khám phá</h3>
+        <p>Vậy là bài toán đã được giải quyết, nghe có vẻ đơn giản? Trên thực tế để tính được chỉ số Gittins khá phức tạp và ít được dùng trong thực tiễn bằng các thuật toán khác tuy không tối ưu nhưng đơn giản hơn và xấp xỉ lời giải tối ưu. </p>
+
+        <p>Một trong những thuật toán xấp xỉ phổ biến nhất là epsilon-greedy. Epsilon ở đây chỉ một số dương nhỏ, ví dụ epsilon = 0.1 = 10%. Tại mỗi thời điểm bạn chọn máy cho bạn phần thưởng cao nhất cho tới thời điểm đó với xác suất 1-epsilon (tận hưởng), còn lại với xác suất epsilon, bạn chọn máy chơi một cách ngẫu nhiên (khám phá). Cách này đảm bảo tại mọi thời điểm bạn vừa tận hưởng với phần lớn thời gian (ví dụ 90%), mà vẫn có thời gian khám phá (ví dụ 10%), thay vì chia rẽ quá trình khám phá và tận hưởng như ở cách làm trước. Ngoài ra ta có thể thay đổi, mở rộng thuật toán cho phù hợp với từng hoàn cảnh như: chọn epsilon cho phù hợp, chọn epsilon nhỏ dần theo thời gian để việc khám phá nhanh hơn lúc đầu và chậm hơn lúc sau, chọn giá trị ban đầu, chọn cách thay đổi giá trị cho các máy sau mỗi lần chơi...</p>
+
+        <p>Theo thuật toán này, mỗi lần ta nên chọn quán quen với xác suất 1-epsilon, và thử quán mới với xác suất epsilon. Giá trị của epsilon phụ thuộc vào nhiều yếu tố như số lượng quán, thời gian còn lại... Ví dụ nếu bạn mới chuyển tới một thành phố mới và sẽ ở đó lâu dài thì epsilon nên cao hơn, vì nếu khám phá được quán thật ngon thì bạn sẽ được hưởng lợi lâu dài, còn nếu bạn sắp chuyển đi nơi khác tuần sau, thì epsilon nên thấp, vì dù có tìm được quán mới ngon hơn bạn cũng không thể ăn thêm nhiều lần nữa, và do vậy ta nên dành thời gian ít ỏi còn lại đi ăn ở những nhà hàng quen thuộc yêu thích của ta.</p>
+
+        <p>Tất nhiên, bài toán này giả sử ta không có thông tin gì về các nhà hàng. Trên thực tế, hiện nay có nhiều cách để biết được thông tin về nhà hàng trước khi đến ăn: review từ bạn bè, từ các trang web đồ ăn như foodie, yelp... Trong trường hợp này, các nhà hàng xuất phát điểm không như nhau, mà dựa vào những thông tin bạn tìm được. Sau đó, mỗi lần ăn thử ở một hàng bạn thay đổi điểm của nó phụ thuộc vào trải nghiệm của bạn và những thông tin trước đó (ví dụ review 4.9/5 mà bạn ăn dở 2/5 thì điểm mới của nhà hàng trở thành 3.5 chẳng hạn). Rồi sau đó tiếp tục theo nguyên tắc 1-epsilon tận hưởng (chọn hàng có điểm cao nhất), và epsilon khám phá (chọn một hàng ngẫu nhiên).</p>
+        <section>
+        </section>
+        <h3>Lời kết</h3>
+        <p>Túm lại thì, sau bài viết này mình có vài kết luận cho bản thân: </p>
+        <ul>
+            <li>Đứng núi này trông núi nọ là một hiện tượng tự nhiên, nhưng nên nhớ rằng giá trị của núi nọ chỉ cao vì nó lạ chứ không chắc giá trị thực sự đã cao hơn núi mình đang có.</li>
+            <li>Khi lựa chọn cái mới (khám phá) và cái cũ (tận hưởng), nên ưu tiên cái cũ (chọn với xác suất cao hơn), nhưng thi thoảng vẫn nên chọn cái mới.</li>
+            <li>Nên ưu tiên khám phá khi còn nhiều thời gian và ưu tiên tận hưởng khi không còn nhiều thời gian.</li>
+            <li>Khi đọc review nhà hàng/ sản phẩm, ngoài số điểm thì việc có bao nhiêu review vô cùng quan trọng. Nếu review chỉ có vài người đánh giá thì dù điểm cao hay điểm thấp ta cũng không thể quá tin vào điểm số.</li>
+            <li>Không nên bỏ hi vọng hoàn toàn ở một nhà hàng chỉ vì một trải nghiệm tồi, chỉ nên ít chọn đi hàng đó hơn thôi. </li>
+        </ul>
+        </section>
+        <section>
+        <h3>Tài liệu tham khảo</h3>
+        <ol>
+            <li><a href=https://www.goodreads.com/book/show/25666050-algorithms-to-live-by>Algorithms to live by</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Gittins_index>Gittins index</a></li>
+            <li><a href=https://en.wikipedia.org/wiki/Multi-armed_bandit>Multi-armed_bandit</a></li>
+        </ol>
+        </section>
+</body>
+</html>
