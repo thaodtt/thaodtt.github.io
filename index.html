@@ -1,63 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-	<title>Thao Do Website</title>
-	<link rel="stylesheet" href="style.css">
-	<!-- Add icon library -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Include Bootstrap CSS from a CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Personal website</title>
 </head>
 <body>
+    
+  <!-- Bootstrap container to center content -->
+  <div class="container">
 
-<!-- Header -->
-	<header>
+    <!-- Bootstrap row -->
+    <div class="row">
+
+      <!-- Bootstrap columns -->
+      <div class="col">
+        <figure>
+            <img src="thao.jpg" alt="photo of Thao" display="block" width="80%">
+        </figure>
+      </div>
+      <div class="col">
+        <h3><span>About</span></h3>
+        <p>Hi, my name is Thao. 
+            I am a <a href="https://math.mit.edu/~thaodo">mathematician</a> 
+            turns <a href="https://www.linkedin.com/in/thao-do-280307127">quant researcher</a> who enjoys 
+            <a href="https://www.instagram.com/thao.do.art/?hl=en">sketching</a> 
+            and <a href="https://www.youtube.com/channel/UCZdbdCQaibAXjCM072qbkCQ">playing piano</a>.
+            I like to learn new things. This website is my playground to experiment with web development.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+            <h3><span>Blog</span></h3>
+            <p>Here are some posts that I orginally wrote for <a href="https://www.masspvn.org/en">MaSSP</a>, a math and science summer camp in Vietnam that I co-founded with some friends while in school.</p>
+            <ul>
+                <li><a href="blog/nghich_ly_berkson.html">Nghịch lý Berkson</a></li>
+                <li><a href="blog/bao_gio_lay_chong.html">Bao giờ lấy chồng</a></li>
+                <li><a href="blog/bai_toan_xep_lich.html">Bài toàn xếp lịch</a></li>
+                <li><a href="blog/li_xi_dau_nam.html">Lì xì đầu năm</a></li>
+                <li><a href="blog/hom_nay_an_gi.html">Hôm nay ăn gì</a></li>
+            </ul>
+      </div>
+      <div class="col">
+            <h3><span>Games</span></h3>
+	            <p>Some simple games I learned from the javascript class</p>
+                <ul>
+                    <li><a href="ball_game/ball_game.html">Keep the ball alive</a></li>
+                </ul>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+<!-- <header>
 	<h1><span>Thao Do</span>'s home page</h1>
 </header>
 
-<!-- Navigation bar-->
 <nav>
-    <!-- <h3>Navigation menu</h3> -->
 	<ul>
-		<!-- <li><a href="index.html"><span>About</span></a></li> -->
+		<li><a href="index.html"><span>About</span></a></li>
 		<li><a href=index.html><span>About</span></a></li>
 		<li><a href="#blog">Blog</a></li>
 		<li><a href="#game">Games</a></li>
 	</ul>
 </nav>
 
-<!-- Main section -->
-
-<figure id="personal_photo">
-	<img src="thao.jpg" alt="photo of Thao">
-</figure>
-
-<section id="about">
-	<!-- <h3><span>About</span></h3> -->
-	<p>My name is Thao. I like to learn new things. This website is my playground to experiment with web development.</p>
-</section>
-
-<section id="blog">
-	<h3>Blog</h3>
-	<p>Here are some posts that I orginally wrote for <a href="https://www.masspvn.org/en">MaSSP</a>, a math and science summer camp in Vietnam that I co-founded with some friends while in school.</p>
-	<ul>
-		<li><a href="blog/nghich_ly_berkson.html">Nghịch lý Berkson</a></li>
-		<li><a href="blog/bao_gio_lay_chong.html">Bao giờ lấy chồng</a></li>
-		<li><a href="blog/bai_toan_xep_lich.html">Bài toàn xếp lịch</a></li>
-		<li><a href="blog/li_xi_dau_nam.html">Lì xì đầu năm</a></li>
-		<li><a href="blog/hom_nay_an_gi.html">Hôm nay ăn gì</a></li>
-	</ul>
-</section>
-
-<section id="game">
-	<h3>Games</h3>
-	<p>Some simple games I learned from the javascript class</p>
-	<ul>
-		<li><a href="ball_game/ball_game.html">Ball game</a></li>
-	</ul>
-</section>
-
-<!-- Footer -->
 <footer>
 	<ul>
 		<li><a href="#" class="fa fa-linkedin"></a></li>
@@ -67,4 +83,4 @@
 	</ul>
 </footer>
 </body>
-</html>
+</html> -->
