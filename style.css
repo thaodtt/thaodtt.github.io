@@ -2,6 +2,25 @@
 /* Palette color codes */
 /* Palette URL: http://paletton.com/#uid=12g0u0kllllaFw0g0qFqFg0w0aF */
 
+@media (max-width: 768px) {
+    .custom-margin {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  @media (min-width: 768px) {
+    .custom-margin {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  @media (min-width: 992px) {
+    .custom-margin {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+  
 :root {
     --color0: #AA6E39;
     --color1: #FFD2AA;
@@ -13,13 +32,9 @@
 
 body {
     color:rgb(3, 35, 62);
-    background-color: antiquewhite;
+    background-color: #ffffff;
     padding: 10px;
     border: 10px;
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-top: 20px;
-    margin-bottom: 50px;
     font-family: sans-serif;
 }
 header, nav, section, article, aside, footer {
