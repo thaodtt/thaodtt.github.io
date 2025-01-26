@@ -3,15 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>Hôm nay ăn gì"</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         
     <!-- Main section -->
+    <div class="row custom-margin">
         <section>
         <h2>Hôm nay ăn gì, và giải thích toán học cho việc "đứng núi này trông núi nọ"</h2>
-
-        <p>Một buổi tối thứ bảy mát mẻ, bạn cùng mấy đứa bạn thân băn khoăn câu hỏi muôn thuở: "hôm nay ăn gì?" Nên tới quán phở quen thuộc cạnh nhà, hay thử quán phở cuốn mới mở đầu ngõ, hay tới quán mý Ý mới thử một lần. Quán phở bạn đã ăn nhiều lần và phần lớn là ngon (7/10), quán phở cuốn mới mở, chưa biết là sẽ ngon hơn hay dở hơn. Còn quán mý Ý bạn mới tới một lần và chất lượng tạm được (6/10). Bạn muốn tận hưởng đồ ăn ngon hàng ngày nên sẽ quá rủi ro nếu mỗi ngày đều đi thử quán mới, nhưng nếu không thử cái mới thì bạn có thể sẽ bỏ lỡ nhiều món ngon. Vậy thì làm sao để cân bằng giữa "tận hưởng" và "khám phá" (exploit vs explore)?</p>
+        </section>
+        <div class="col-12 col-md-6 bg-light p-3">
+            <section>
+                <h3>Mở bài</h3>
+                    <p>Một buổi tối thứ bảy mát mẻ, bạn cùng mấy đứa bạn thân băn khoăn câu hỏi muôn thuở: "hôm nay ăn gì?" Nên tới quán phở quen thuộc cạnh nhà, hay thử quán phở cuốn mới mở đầu ngõ, hay tới quán mý Ý mới thử một lần. Quán phở bạn đã ăn nhiều lần và phần lớn là ngon (7/10), quán phở cuốn mới mở, chưa biết là sẽ ngon hơn hay dở hơn. Còn quán mý Ý bạn mới tới một lần và chất lượng tạm được (6/10). Bạn muốn tận hưởng đồ ăn ngon hàng ngày nên sẽ quá rủi ro nếu mỗi ngày đều đi thử quán mới, nhưng nếu không thử cái mới thì bạn có thể sẽ bỏ lỡ nhiều món ngon. Vậy thì làm sao để cân bằng giữa "tận hưởng" và "khám phá" (exploit vs explore)?</p>
         <figure class="blog-photo">
             <img src="image/hom_nay_an_gi.jpeg" alt="Hình ảnh 3 món ăn để lựa chọn">
         </figure>
@@ -23,7 +28,10 @@
         <p>Một cách đơn giản là bạn dành ra một thời gian nhất định (ví dụ n/10 lần đầu tiên) chơi thử tất cả các máy, chọn máy cho bạn tổng phần thưởng cao nhất rồi thời gian còn lại (ví dụ 9n/10 lần còn lại) bạn chỉ chơi máy đó. Cách này nghe cũng có lý: bạn đi ăn thử tất cả các hàng một lần, rồi hàng nào ngon nhất thì từ đó về sau chỉ ăn ở đó. Tuy nhiên, vì chất lượng mỗi quán không phải cố định mà thường là một phân bố ngẫu nhiên (tùy thời điểm bạn đến, tùy món bạn chọn), nếu bạn bỏ qua một quán chỉ vì họ nấu dở một bữa thì có phí quá không? Hay quán bạn nghĩ là ngon nhất những ngày sau đó hóa ra lại không ngon lắm thì sao? Ngoài ra có cả trăm quán xung quanh bạn, nếu bạn thử hết một lượt thì cũng đã quá mất cả trăm ngày phải chịu rủi ro ăn đồ mới không ngon rồi.</p>
 
         <p>Vậy có cách nào tốt hơn? Thuật toán tối ưu được chứng minh là có tồn tại bởi Gittins vào năm 1979. Tại mỗi thời điểm mỗi máy sẽ có một giá trị nhất định, gọi là chỉ số Gittins. Lúc bắt đầu các máy đều có giá trị như nhau và ta chọn ngẫu nhiên một máy. Sau đó tùy theo giải thưởng nhận được, ta thay đổi chỉ số Gittins của máy đó, và những lần chơi tiếp theo mỗi lần ta chọn máy có chỉ số Gittins cao nhất. Ví dụ ban đầu các máy có chỉ số 0.6, chọn máy số 1, nếu giải thưởng là 10, ta thay đổi chỉ số của máy 1 bằng 0.5, nếu giải thưởng là -10 chỉ số mới bằng 0.1). Lưu ý là dù máy ta chọn có cho giải thưởng cao, vì ta chưa chắc chắn đó có phải là giá trị cao nhất không, chỉ số Gittins sẽ giảm đi để ta thử những máy khác nữa. Chỉ khi máy đó cho ta giải thưởng cao nhiều lần liên tiếp, chỉ số Gittins của nó mới đủ cao để ta không bao giờ muốn thử máy khác nữa. Điều này phần nào giải thích tại sao con người hay đứng núi này trông núi nọ, vì núi nọ là núi ta chưa thử bao giờ, nên chỉ số Gittins của nó thường cao hơn, dù chưa chắc giá trị thực sự của nó đã cao hơn núi mà mình đang có. </p>
-
+</section>
+    </div>
+    <div class="col-12 col-md-6 bg-light p-3">
+    <section>
         <h3>Cân bằng tận hưởng và khám phá</h3>
         <p>Vậy là bài toán đã được giải quyết, nghe có vẻ đơn giản? Trên thực tế để tính được chỉ số Gittins khá phức tạp và ít được dùng trong thực tiễn bằng các thuật toán khác tuy không tối ưu nhưng đơn giản hơn và xấp xỉ lời giải tối ưu. </p>
 
@@ -32,8 +40,7 @@
         <p>Theo thuật toán này, mỗi lần ta nên chọn quán quen với xác suất 1-epsilon, và thử quán mới với xác suất epsilon. Giá trị của epsilon phụ thuộc vào nhiều yếu tố như số lượng quán, thời gian còn lại... Ví dụ nếu bạn mới chuyển tới một thành phố mới và sẽ ở đó lâu dài thì epsilon nên cao hơn, vì nếu khám phá được quán thật ngon thì bạn sẽ được hưởng lợi lâu dài, còn nếu bạn sắp chuyển đi nơi khác tuần sau, thì epsilon nên thấp, vì dù có tìm được quán mới ngon hơn bạn cũng không thể ăn thêm nhiều lần nữa, và do vậy ta nên dành thời gian ít ỏi còn lại đi ăn ở những nhà hàng quen thuộc yêu thích của ta.</p>
 
         <p>Tất nhiên, bài toán này giả sử ta không có thông tin gì về các nhà hàng. Trên thực tế, hiện nay có nhiều cách để biết được thông tin về nhà hàng trước khi đến ăn: review từ bạn bè, từ các trang web đồ ăn như foodie, yelp... Trong trường hợp này, các nhà hàng xuất phát điểm không như nhau, mà dựa vào những thông tin bạn tìm được. Sau đó, mỗi lần ăn thử ở một hàng bạn thay đổi điểm của nó phụ thuộc vào trải nghiệm của bạn và những thông tin trước đó (ví dụ review 4.9/5 mà bạn ăn dở 2/5 thì điểm mới của nhà hàng trở thành 3.5 chẳng hạn). Rồi sau đó tiếp tục theo nguyên tắc 1-epsilon tận hưởng (chọn hàng có điểm cao nhất), và epsilon khám phá (chọn một hàng ngẫu nhiên).</p>
-        <section>
-        </section>
+
         <h3>Lời kết</h3>
         <p>Túm lại thì, sau bài viết này mình có vài kết luận cho bản thân: </p>
         <ul>
@@ -52,5 +59,7 @@
             <li><a href=https://en.wikipedia.org/wiki/Multi-armed_bandit>Multi-armed_bandit</a></li>
         </ol>
         </section>
+        </div>
+        </div>
 </body>
 </html>

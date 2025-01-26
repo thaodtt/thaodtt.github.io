@@ -4,15 +4,19 @@
     <head>
         <meta charset="utf-8">
         <title>Nghịch lý Berkson"</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
     
     <!-- Main section -->
+    <div class="row custom-margin">
         <section>
         <h2>Bài toàn xếp lịch, và lý do ta hay trì hoãn những việc quan trọng</h2>
         </section>
+        <div class="col-12 col-md-6 bg-light p-3">
         <section>
+            <h3>Mở bài</h3>
         <p>Bạn đã bao giờ gặp phải những tình huống này chưa?</p>
             <ol>
                 <li>Bạn là chủ tiệm ăn, hàng ngày khách hàng tới quán vào những thời điểm khác nhau, bạn nên phục vụ ai trước? Nếu một khách hàng tới sau một phút nhưng gọi món mất rất ít thời gian chuẩn bị thì bạn có nên phục vụ người đó trước không?</li>
@@ -28,7 +32,7 @@
 
             <p>Với các tình huống ta gặp thường ngày như ở trên, chỉ có ta là người duy nhất thực hiện các công việc, do đó bài toán trở thành bài toàn xếp lịch một máy. Nếu ta chỉ quan tâm đến tổng thời gian hoàn thành công viêc thì dù ta chọn làm việc nào trước việc nào sau không quan trọng, tổng thời gian luôn là t_1+t_2+...+t_n. Do vậy ta phải đặt ra các mục tiêu khác.</p>
 
-        <h3>Mục tiêu quyết định thuật toán</h3>
+            <h3>Mục tiêu quyết định thuật toán</h3>
 
             <p>Quay lại với tình huống số một: bạn là chủ tiệm ăn, anh A tới quán lúc 12h trưa và gọi món cá kho cần 10 phút để chuẩn bị, sau đó một phút chị B bước vào quán và gọi món phở chỉ mất 5 phút chuẩn bị. Bạn nên phục vụ ai trước? Câu trả lời là tùy vào mục tiêu của bạn. </p>
 
@@ -37,8 +41,13 @@
             <p>Nếu mục tiêu của ta là giảm thiểu độ trễ của người phải chờ lâu nhất thì ta nên phục vụ A trước. Tổng quát hơn, thuật toán tối ưu là phục vụ theo thứ tự thời gian đến, hay 'first come first serve'. Đây cũng là cách đa số các cửa hàng hoạt động. Tuy nhiên, nếu ta thay đổi mục tiêu và muốn giảm thiểu tổng độ trễ của tất cả khách hàng, thì ta nên phục vụ B trước vì tổng độ trễ là 16+5 = 21 nhỏ hơn tổng độ trễ khi phục vụ A trước = 10+14 = 24 phút. Tổng quát hơn, nếu các khách hàng đến cùng lúc (hoặc gần thời điểm), ta nên phục vụ khách hàng cần ít thời gian để hoàn thành nhất trước. Nếu các khách hàng đến vào những thời điểm khác nhau, bài toán này trở thành rất khó, khó theo nghĩa chưa ai tìm ra thuật toán giải trong thời gian chấp nhận được.</p>
 
             <p>Tương tự với tình huống đồ ăn trong tủ lạnh, độ trễ ở đây bằng thời gian quá hạn sử dụng của một thực phẩm, độ trễ bằng 0 nếu ta ăn hết thực phẩm đó trước hạn sử dụng. Nếu ta đặt mục tiêu giảm thiểu thời gian quá hạn sử dụng lớn nhất của một thực phẩm, thì ta nên ăn đồ có hạn sử dụng gần nhất trước (ví dụ ăn đậu hũ tươi trước khi ăn thịt đông lạnh). Tuy nhiên, nếu ta muốn giảm thiểu tổng số lượng thực phẩm quá hạn (đỗ trễ >0), hoặc tổng thời gian quá hạn sử dụng, thì ta nên ăn thực phẩm ta có thể ăn hết trong thời gian nhanh nhất (ví dụ một cây súp lơ ăn ba bữa mới hết, còn rau muống ăn một bữa là hết thì ta nên ăn rau muống trước súp lơ).</p>
+        </section>
+        </div>
 
-        <h3>Tại sao ta hay trì hoãn những việc quan trọng?</h3>
+        <div class="col-12 col-md-6 bg-light p-3">
+        <section>
+       
+            <h3>Tại sao ta hay trì hoãn những việc quan trọng?</h3>
 
             <p>Với tình huống số ba và bốn, khi ta có một danh sách các công việc, nếu việc có hạn (deadline) thì ta có thể áp dụng các thuật toán tương tự như tình huống số một và hai, bằng cách đặt độ trễ bằng thời gian quá hạn của từng công việc. Nhưng nếu các việc không có hạn (ví dụ như viết truyện, đăng kí lớp học yoga), hoặc hạn rất xa thời gian hiện tại (ví dụ như khi ta có cả học kì để viết bài luận) thì sao?</p>
 
@@ -71,5 +80,6 @@
             <li><a href=https://en.wikipedia.org/wiki/Single-machine_scheduling>Single machine scheduling</a></li>
         </ol>
         </section>
+    </div>
     </body>
 </html>
