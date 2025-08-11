@@ -4,20 +4,20 @@
 
 @media (max-width: 768px) {
     .custom-margin {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 1px;
+      margin-right: 1px;
     }
   }
   @media (min-width: 768px) {
     .custom-margin {
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
   @media (min-width: 992px) {
     .custom-margin {
-      margin-left: 30px;
-      margin-right: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
     }
   }
   
@@ -37,10 +37,10 @@ body {
     border: 10px;
     font-family: sans-serif;
 }
-header, nav, section, article, aside, footer {
+/* header, nav, section, article, aside, footer {
     display: block;
     margin: 20px;
-}
+} */
 
 header, footer, nav {
     text-align:center;
@@ -62,7 +62,7 @@ nav {
 nav ul{
     list-style-type: none;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     overflow: hidden;
 }
 nav li {
@@ -95,25 +95,6 @@ section h3{
 }
 section p {
     padding: 5px;
-}
-/* section ul {
-    margin: 50px;
-    background-color: var(--color0);
-}
-section ul li {
-    list-style-type: circle;
-    margin: 5px;
-    padding: 5px;
-}
-section ol li {
-    padding: 5px;
-}
-section li:hover {
-    background-color: var(--color2);
-} */
-#about {
-    display: block;
-    width: 50%;
 }
 #personal_photo img{
     display: block;

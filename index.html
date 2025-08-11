@@ -1,70 +1,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal website</title>
+  <title>Thao Do</title>
+  <meta name="description" content="Personal website of Thao Do, mathematician turned quant researcher with expertise in data science, machine learning, and web development.">
+  <!-- Custom favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><strong>Thao Do</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#games">Games</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div class="container">
-    <div class="row custom-margin mt-4">
-      <div class="col-12 col-md-6">
-        <div class="bg-light p-3">
-        <figure>
-          <img src="thao.jpg" alt="photo of Thao" class="img-fluid d-block w-100">
-        </figure>
-      </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="bg-light p-3">
-          <h3><span>About</span></h3>
-          <p>Hi, my name is Thao. 
-              I am a mathematician turned <a href="https://www.linkedin.com/in/thao-do-280307127">quant researcher</a> with a love for 
-              <a href="https://www.instagram.com/thao.do.art/?hl=en">art</a> 
-              and <a href="https://www.youtube.com/channel/UCZdbdCQaibAXjCM072qbkCQ">music</a>. I am a proud cat mom of 
-              <a href="https://www.instagram.com/lemonlittledemon/">Lemon</a>.
-              I have a passion for learning new things, and this website is my creative playground for experimenting with web development.</p>
+    <!-- About Section -->
+    <section id="about">
+      <div class="row custom-margin mt-4">
+        <div class="col-12 col-md-6">
+          <div class="bg-light p-4 text-center">
+            <div class="profile-photo-container">
+              <img src="images/thao.jpg" alt="photo of Thao" class="rounded-circle img-fluid profile-photo mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+              <h2>Thao Do</h2>
+              <p class="text-muted">Quant Researcher</p>
+              <div class="social-links mt-3">
+                <a href="https://www.linkedin.com/in/thao-do-280307127" target="_blank" class="mx-2" title="LinkedIn">
+                  <i class="fab fa-linkedin social-icon" style="font-size: 24px; color: #0077b5; background: none; padding: 0; width: auto; margin: 0;"></i>
+                </a>
+                <a href="https://www.instagram.com/thao.do.art/?hl=en" target="_blank" class="mx-2" title="Instagram Art">
+                  <i class="fab fa-instagram social-icon" style="font-size: 24px; color: #e4405f; background: none; padding: 0; width: auto; margin: 0;"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCZdbdCQaibAXjCM072qbkCQ" target="_blank" class="mx-2" title="YouTube">
+                  <i class="fab fa-youtube social-icon" style="font-size: 24px; color: #ff0000; background: none; padding: 0; width: auto; margin: 0;"></i>
+                </a>
+                <a href="https://github.com/thaodtt" target="_blank" class="mx-2" title="GitHub">
+                  <i class="fab fa-github social-icon" style="font-size: 24px; color: #333; background: none; padding: 0; width: auto; margin: 0;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="bg-light p-4">
+            <h3><span>About Me</span></h3>
+            <p class="lead">Hi, I'm Thao! I'm a mathematician turned <a href="https://www.linkedin.com/in/thao-do-280307127">quant researcher</a> with a passion for data science, creative problem-solving, and feline companionship.</p>
+            
+            <div class="mt-4">
+              <h5>Interests & Skills</h5>
+              <p>📊 Data Science & Machine Learning<br>
+                💻 Web Development & Creative Technology</br>
+                 🎨 <a href="https://www.instagram.com/thao.do.art/?hl=en">Art</a> • 
+                 🎵 <a href="https://www.youtube.com/channel/UCZdbdCQaibAXjCM072qbkCQ">Music</a> • 
+                 🐱 Proud cat mom to <a href="https://www.instagram.com/lemonlittledemon/">Lemon</a>
+                 </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row custom-margin mt-4">
-      <div class="col-12 col-md-6">
-        <div class="bg-light p-3">
-        <h3><span>Sites</span></h3>
-        <p>Websites I have built using next.js deployed on Vercel</p>
-        <ul>
-          <li><a href="https://reader-frontend.vercel.app/">A children book library</a></li>
-          <li><a href="https://unique-handcrafted-gifting-solutions.vercel.app/">An art gallery</a></li>
-        </ul>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="row custom-margin mt-4">
+        <div class="col-12">
+          <div class="bg-light p-4">
+            <h3><span>Featured Project</span></h3>
+            <div class="project-card mb-4 p-3 border rounded">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="https://cfa.org/wp-content/uploads/2024/02/Siamese_grid.jpg" class="img-fluid rounded" alt="Cat Breed Analysis">
+                </div>
+                <div class="col-md-8">
+                  <h4><a href="cat_breed_analysis.html">Cat Breed Clustering Analysis</a></h4>
+                  <p class="text-muted mb-2"><i class="fas fa-code"></i> Python • Machine Learning • Data Visualization</p>
+                  <p>Machine learning analysis of 40+ cat breeds using PCA and K-means clustering to identify personality patterns. Features interactive visualizations and statistical analysis of breed characteristics.</p>
+                  <a href="cat_breed_analysis.html" class="btn btn-primary btn-sm">View Analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-      <div class="col-12 col-md-6">
-        <div class="bg-light p-3">
-          <h3><span>Games</span></h3>
-          <p>Some simple games I learned from the javascript class</p>
-          <ul>
-              <li><a href="ball_game/ball_game.html">Keep the ball alive</a></li>
-              <li><a href="https://thaodtt.github.io/caro/">Caro, a popular chess in Vietnam</a></li>
-          </ul>
+      
+      <div class="row custom-margin mt-4">
+        <div class="col-12 col-md-6">
+          <div class="bg-light p-4">
+            <h3><span>Web Applications</span></h3>
+            
+            <div class="project-card mb-3 p-3 border rounded">
+              <div class="row">
+                <div class="col-4">
+                  <img src="images/bibo_preview.png" class="img-fluid rounded" alt="Library">
+                </div>
+                <div class="col-8">
+                  <h5><a href="https://app.bibo-ai.com/" target="_blank">Children's Book Library</a></h5>
+                  <p class="text-muted mb-1"><small><i class="fab fa-react"></i> Next.js • Express • MongoDB • Vercel</small></p>
+                  <p><small>Interactive library platform for children's books</small></p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-card mb-3 p-3 border rounded">
+              <div class="row">
+                <div class="col-4">
+                  <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=150&h=100&fit=crop&auto=format&q=80" class="img-fluid rounded" alt="Art Gallery">
+                </div>
+                <div class="col-8">
+                  <h5><a href="https://unique-handcrafted-gifting-solutions.vercel.app/" target="_blank">Art Gallery</a></h5>
+                  <p class="text-muted mb-1"><small><i class="fab fa-react"></i> Next.js • Vercel</small></p>
+                  <p><small>Handcrafted art showcase and gallery</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-md-6">
+          <div class="bg-light p-4">
+            <h3><span id="games">Interactive Games</span></h3>
+            
+            <div class="project-card mb-3 p-3 border rounded">
+              <div class="row">
+                <div class="col-4">
+                  <img src="images/ball_game_preview.png" class="img-fluid rounded" alt="Ball Game">
+                </div>
+                <div class="col-8">
+                  <h5><a href="ball_game/ball_game.html">Keep the Ball Alive</a></h5>
+                  <p class="text-muted mb-1"><small><i class="fab fa-js"></i> HTML5 Canvas • JavaScript</small></p>
+                  <p><small>Interactive ball game with multiple difficulty levels</small></p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-card mb-3 p-3 border rounded">
+              <div class="row">
+                <div class="col-4">
+                  <img src="images/caro_preview.png" class="img-fluid rounded" alt="Caro Game">
+                </div>
+                <div class="col-8">
+                  <h5><a href="https://thaodtt.github.io/caro/" target="_blank">Caro Game</a></h5>
+                  <p class="text-muted mb-1"><small><i class="fab fa-js"></i> JavaScript • Game Logic</small></p>
+                  <p><small>Vietnamese tic-tac-toe variant game</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+    <!-- Blog Section -->
+    <section id="blog">
+      <div class="row custom-margin mt-4">
+        <div class="col-12">
+          <div class="bg-light p-4">
+            <h3><span>Mathematical Blog Posts</span></h3>
+            <p>Mathematical concepts explained through engaging stories and real-world applications. Originally written for <a href="https://www.masspvn.org/en">MaSSP</a>, a math and science summer camp in Vietnam that I co-founded.</p>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <h5><i class="fas fa-language"></i> Vietnamese</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">📊 <a href="blog/nghich_ly_berkson.html">Nghịch lý Berkson</a><br><small class="text-muted">Selection bias and correlation paradoxes</small></li>
+                  <li class="mb-2">💍 <a href="blog/bao_gio_lay_chong.html">Bao giờ lấy chồng</a><br><small class="text-muted">The secretary problem & optimal stopping</small></li>
+                  <li class="mb-2">📅 <a href="blog/bai_toan_xep_lich.html">Bài toàn xếp lịch</a><br><small class="text-muted">Scheduling theory & procrastination</small></li>
+                  <li class="mb-2">🧧 <a href="blog/li_xi_dau_nam.html">Lì xì đầu năm</a><br><small class="text-muted">Risk aversion & decision theory</small></li>
+                  <li class="mb-2">🍽️ <a href="blog/hom_nay_an_gi.html">Hôm nay ăn gì</a><br><small class="text-muted">Multi-armed bandit problem</small></li>
+                </ul>
+              </div>
+              
+              <div class="col-md-6">
+                <h5><i class="fas fa-globe"></i> English</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">📊 <a href="blog/berkson_paradox_en.html">Berkson's Paradox</a><br><small class="text-muted">Why talent and beauty seem negatively correlated</small></li>
+                  <li class="mb-2">💍 <a href="blog/when_to_marry_en.html">When to Marry?</a><br><small class="text-muted">The Secretary Problem applied to life decisions</small></li>
+                  <li class="mb-2">📅 <a href="blog/scheduling_problem_en.html">The Scheduling Problem</a><br><small class="text-muted">Mathematical reasons for procrastination</small></li>
+                  <li class="mb-2">🧧 <a href="blog/new_year_lottery_en.html">Insurance vs Lottery</a><br><small class="text-muted">Risk theory & behavioral economics</small></li>
+                  <li class="mb-2">🍽️ <a href="blog/what_to_eat_today_en.html">Exploration vs Exploitation</a><br><small class="text-muted">The grass is always greener paradox</small></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row custom-margin mt-4">
-      <div class="col-12 col-md-6">
-        <div class="bg-light p-3">
-        <h3><span>Blog</span></h3>
-        <p>Here are some posts that I orginally wrote for <a href="https://www.masspvn.org/en">MaSSP</a>, a math and science summer camp in Vietnam that I co-founded with some friends while in school.</p>
-        <ul>
-            <li><a href="blog/nghich_ly_berkson.html">Nghịch lý Berkson</a></li>
-            <li><a href="blog/bao_gio_lay_chong.html">Bao giờ lấy chồng</a></li>
-            <li><a href="blog/bai_toan_xep_lich.html">Bài toàn xếp lịch</a></li>
-            <li><a href="blog/li_xi_dau_nam.html">Lì xì đầu năm</a></li>
-            <li><a href="blog/hom_nay_an_gi.html">Hôm nay ăn gì</a></li>
-        </ul>
-      </div>
-      </div>
-    </div>
+    </section>
   </div>
 
   <!-- Bootstrap JS and dependencies -->

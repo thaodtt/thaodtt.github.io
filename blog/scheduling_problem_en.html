@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scheduling Problem</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><strong>Thao Do</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main section -->
+    <div class="container">
+    <div class="row custom-margin">
+        <section>
+        <h2>The Scheduling Problem and Why We Procrastinate Important Tasks</h2>
+        </section>
+        <div class="col-12 col-md-6 bg-light p-3">
+        <section>
+            <h3>Introduction</h3>
+        <p>Have you ever encountered these situations?</p>
+            <ol>
+                <li>You're a restaurant owner. Customers come to your restaurant at different times every day. Who should you serve first? If a customer comes a minute later but orders food that takes very little time to prepare, should you serve that person first?</li>
+                <li>You just went shopping and bought vegetables and meat. Each type of food has a different expiration date. What should you eat first and what should you eat later?</li>
+                <li>Monday morning at the office, you open your computer and look at your to-do list feeling overwhelmed - a long list of tasks to complete. Not knowing which task to do first, you end up opening your phone to text, scroll through Facebook... and the morning passes without completing any tasks.</li>
+                <li>You're a senior student with two months left to complete your thesis, but every time you prepare to write, you hesitate and want to switch to doing something else. Only when the deadline approaches do you frantically sit down to write hastily.</li>
+            </ol>
+        <p>These problems in mathematics and computer science are collectively called scheduling problems.</p>
+
+        <h3>The Scheduling Problem</h3>
+
+            <p>Suppose we have n tasks, each task takes time t_i to complete, and we have m machines with different working capacities. How do we schedule which machine does which task first so that the total time from start to completion of all tasks is as short as possible? This problem has many important applications in computer science, as computers often have multiple processors working simultaneously, applications in production lines... We can also add some assumptions like machines must rest for a certain period before starting new work, some tasks must be performed by machine A before being put into machine B (for example, when washing clothes, you must put them in the washing machine before the dryer).</p>
+
+            <p>With everyday situations like those above, only we are the sole person performing the tasks, so the problem becomes a single-machine scheduling problem. If we only care about the total completion time, then regardless of which task we choose to do first, the total time is always t_1+t_2+...+t_n. Therefore, we must set other objectives.</p>
+
+            <h3>Objectives Determine Algorithms</h3>
+
+            <p>Back to situation one: you're a restaurant owner. Person A comes to the restaurant at 12 noon and orders braised fish that takes 10 minutes to prepare, then a minute later person B enters and orders pho that only takes 5 minutes to prepare. Who should you serve first? The answer depends on your objective.</p>
+
+            <p>Let's call a customer's 'lateness' the time that person has to wait from entering the restaurant to receiving their food. In our example, if we serve A first, A's lateness is 10 minutes and B's is 9+5 = 14 minutes. If we serve B first, B's lateness is 5 minutes and A's is 1+5+10 = 16 minutes.</p>
+
+            <p>If our goal is to minimize the lateness of the person who has to wait the longest, we should serve A first. More generally, the optimal algorithm is to serve in order of arrival, or 'first come first serve'. This is also how most stores operate. However, if we change our objective and want to minimize the total lateness of all customers, we should serve B first because the total lateness is 16+5 = 21, which is less than the total lateness when serving A first = 10+14 = 24 minutes. More generally, if customers arrive at the same time (or close to it), we should serve the customer who needs the least time to complete first. If customers arrive at different times, this problem becomes very difficult - difficult in the sense that no one has found an algorithm to solve it in acceptable time.</p>
+
+            <p>Similarly with food in the refrigerator, lateness here equals the time past the expiration date of a food item, with lateness equal to 0 if we finish the food before its expiration date. If we set the goal to minimize the maximum time past expiration of any food, we should eat the food with the nearest expiration date first (e.g., eat fresh tofu before frozen meat). However, if we want to minimize the total amount of expired food (lateness > 0), or total time past expiration, we should eat the food we can finish in the shortest time (e.g., if it takes three meals to finish a cauliflower but one meal to finish water spinach, we should eat water spinach before cauliflower).</p>
+        </section>
+        </div>
+
+        <div class="col-12 col-md-6 bg-light p-3">
+        <section>
+       
+            <h3>Why Do We Procrastinate Important Tasks?</h3>
+
+            <p>With situations three and four, when we have a list of tasks, if the tasks have deadlines, we can apply algorithms similar to situations one and two, by setting lateness equal to the time past deadline for each task. But what if the tasks have no deadlines (like writing stories, signing up for yoga classes), or the deadline is very far from the current time (like when we have a whole semester to write an essay)?</p>
+
+            <p>We can set the goal to complete as many tasks as possible at each point in time. With this goal, the optimal algorithm is to do the task that takes the least time first, similar to how we should serve the customer who needs the least of our time, or eat the food that's quickest to finish. Sometimes self-help books and time management tips propose rules like the one-minute rule: if any task takes less than a minute to complete, do it right now. The one-minute rule is a good way to remember our optimal algorithm - we should do the task that takes the least time first.</p>
+
+            <p>This algorithm has many benefits and is also a natural approach for many people. However, the algorithm doesn't account for the fact that some tasks are more important than others. In reality, important tasks usually take more time to complete, and perhaps that's why we tend to procrastinate on important tasks. How can we overcome this?</p>
+
+        <h3>How to Procrastinate Less on Important Tasks?</h3>
+
+            <p>A simple approach is to change the objective. Instead of trying to complete as many tasks as possible, we should set the goal to reduce the burden as much as possible at each point in time, where the burden after completing a task is measured by its importance. Suppose we have n tasks, task i takes time t_i to complete and has importance q_i. Let's call the ratio q_i/t_i the importance ratio. With this new objective, the optimal algorithm is to do the task with the highest importance ratio first. For jobs that pay by the hour like lawyers, consultants..., the importance ratio can be measured by hourly wage, and according to this algorithm, lawyers and consultants should prioritize projects that pay the highest hourly rate first.</p>
+
+            <p>For example, as shown in the figure below, we have three tasks: email boss (2 minutes, importance 5), birthday invitation (5 minutes, importance 1), and write report (30 minutes, importance 10). According to the shortest task first algorithm, we would do them in order 1-2-3, but according to the new algorithm, since the importance ratios are 5/2, 1/5, and 10/30 respectively, we should do them in order 1-3-2.</p>
+            
+            <figure class="blog-photo">
+                <img src="image/bai_toan_xep_lich.jpeg" alt="scheduling problem illustration">
+            </figure>
+            
+            <p>Additionally, if each task requires different levels of concentration (e.g., texting birthday invitations requires less concentration than writing emails), we can modify the objective to reduce the burden using the least energy at each point in time. Suppose task i takes time t_i, has importance q_i, and requires n_i energy, then the new optimal algorithm would be: do the task with the highest q_i/(n_i*t_i) ratio.</p>
+
+            <p>If you find calculating the importance of each task too difficult, a simpler way to avoid procrastinating on important tasks is to set deadlines for them. When there are deadlines, our objectives naturally change, and we tend to do the tasks that are closest to deadline first.</p>
+
+        <h3>Conclusion</h3>
+
+            <p>In summary, everything must have an objective - with the right objective, we can more easily act the way we want. When deciding which customer to serve first, we should think about whether we want to please the customer who has to wait the longest, or please all customers. When we have a difficult task we want to procrastinate on, ask yourself how important that task is, how much time it takes, how much energy it requires before deciding whether to do that task first or other easier tasks.</p>
+
+        <h3>References</h3>
+        <ol>
+            <li><a href="https://www.goodreads.com/book/show/25666050-algorithms-to-live-by">Algorithms to live by</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Job_shop_scheduling">Job shop scheduling</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Single-machine_scheduling">Single machine scheduling</a></li>
+        </ol>
+        </section>
+    </div>
+    </div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

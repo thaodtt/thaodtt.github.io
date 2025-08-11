@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>What to Eat Today</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><strong>Thao Do</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+    <!-- Main section -->
+    <div class="container">
+    <div class="row custom-margin">
+        <section>
+        <h2>What to Eat Today, and the Mathematical Explanation for "The Grass is Always Greener"</h2>
+        </section>
+        <div class="col-12 col-md-6 bg-light p-3">
+            <section>
+                <h3>Introduction</h3>
+                    <p>On a cool Saturday evening, you and your close friends are pondering the eternal question: "what should we eat today?" Should you go to the familiar pho restaurant next to your house, try the new pho cuon restaurant that just opened at the beginning of the alley, or go to the Italian restaurant you tried once. You've eaten at the pho restaurant many times and it's mostly good (7/10), the new pho cuon restaurant is unknown - it could be better or worse. As for the Italian restaurant, you've only been there once and the quality was okay (6/10). You want to enjoy good food every day, so it would be too risky to try new restaurants every day, but if you don't try new things, you might miss many delicious dishes. So how do you balance between "enjoying" and "exploring" (exploit vs explore)?</p>
+        <figure class="blog-photo">
+            <img src="image/hom_nay_an_gi.jpeg" alt="Image of 3 food options to choose from">
+        </figure>
+        
+        <p>In life, you'll encounter many similar situations: at a restaurant, not knowing whether to choose a familiar dish or try something new, when going to movies, choosing a genre you love or trying a different type of film, when traveling, going to a favorite city or visiting somewhere new... In medicine, doctors sometimes have to decide whether to give patients a familiar treatment or try a new treatment that hasn't been thoroughly tested but has potential. In industry, companies sometimes have to choose between continuing to produce/sell products that are selling well, or trying new products.</p>
+        <h3>The Bandit Problem</h3>
+        <p>In mathematics and computer science, there's a famous problem that models this issue: the bandit problem. Bandit here refers to slot machines in casinos. Imagine you walk into a casino with 10 slot machines, each with a different prize distribution (for example, the first machine has a 1/101 probability of giving a 100,000 VND prize, 1/1500 of giving a 1 million VND prize, otherwise you lose 1,000 VND in playing fees; the second machine gives a 10,000 VND prize with 1/5 probability, otherwise you lose 500 VND in fees). You get to play n times, each time you choose any machine and receive the prize from that machine. How should you play to get the highest total prize?</p>
+
+        <p>A simple approach is to spend a certain amount of time initially (e.g., the first n/10 times) trying all machines, choose the machine that gave you the highest total prize, then spend the remaining time (e.g., the remaining 9n/10 times) only playing that machine. This sounds reasonable: you try all restaurants once, then from then on only eat at the best one. However, since the quality of each restaurant isn't fixed but usually follows a random distribution (depending on when you arrive, what dish you order), isn't it wasteful to give up on a restaurant just because they cooked poorly once? Or what if the restaurant you thought was the best turns out to be not so good on subsequent days? Also, there are hundreds of restaurants around you - if you try them all at once, you'd already waste a hundred days having to risk eating new, possibly bad food.</p>
+
+        <p>So is there a better way? The optimal algorithm was proven to exist by Gittins in 1979. At each point in time, each machine will have a certain value, called the Gittins index. Initially all machines have the same value and we randomly choose a machine. Then depending on the prize received, we change the Gittins index of that machine, and in subsequent plays, we each time choose the machine with the highest Gittins index. For example, initially all machines have an index of 0.6, we choose machine 1, if the prize is 10, we change machine 1's index to 0.5, if the prize is -10, the new index becomes 0.1). Note that even if the machine we choose gives a high prize, since we're not sure if that's the highest value, the Gittins index will decrease so we try other machines. Only when that machine gives us high prizes many consecutive times will its Gittins index be high enough that we never want to try other machines. This somewhat explains why humans tend to think "the grass is always greener on the other side," because the other side is a side we've never tried, so its Gittins index is usually higher, even though its actual value may not be higher than what we currently have.</p>
+</section>
+    </div>
+    <div class="col-12 col-md-6 bg-light p-3">
+    <section>
+        <h3>Balancing Enjoyment and Exploration</h3>
+        <p>So the problem has been solved, sounds simple? In practice, calculating the Gittins index is quite complex and less used in practice than other algorithms that, while not optimal, are simpler and approximate the optimal solution.</p>
+
+        <p>One of the most popular approximation algorithms is epsilon-greedy. Epsilon here refers to a small positive number, for example epsilon = 0.1 = 10%. At each point in time, you choose the machine that has given you the highest prize so far with probability 1-epsilon (enjoy), and with probability epsilon, you choose a machine randomly (explore). This approach ensures that at all times you both enjoy most of the time (e.g., 90%) while still having time to explore (e.g., 10%), instead of separating the exploration and enjoyment processes as in the previous method. We can also modify and extend the algorithm to suit different circumstances such as: choosing appropriate epsilon, choosing epsilon to decrease over time so exploration is faster initially and slower later, choosing initial values, choosing how to change values for machines after each play...</p>
+
+        <p>According to this algorithm, each time we should choose a familiar restaurant with probability 1-epsilon, and try a new restaurant with probability epsilon. The value of epsilon depends on many factors such as the number of restaurants, remaining time... For example, if you just moved to a new city and will live there long-term, epsilon should be higher, because if you discover a truly delicious restaurant, you'll benefit long-term, but if you're about to move somewhere else next week, epsilon should be low, because even if you find a new restaurant better than familiar ones, you can't eat there many more times, so you should spend your limited remaining time eating at familiar restaurants you love.</p>
+
+        <p>Of course, this problem assumes we have no information about the restaurants. In reality, there are now many ways to know about restaurants before eating there: reviews from friends, from food websites like Foodie, Yelp... In this case, restaurants don't start from the same point, but based on information you've found. Then, each time you try eating at a restaurant, you change its score depending on your experience and previous information (e.g., review 4.9/5 but you had a bad experience 2/5, so the restaurant's new score becomes 3.5). Then continue following the 1-epsilon enjoyment principle (choose the restaurant with the highest score), and epsilon exploration (choose a restaurant randomly).</p>
+
+        <h3>Conclusion</h3>
+        <p>In summary, after this article I have a few conclusions for myself:</p>
+        <ul>
+            <li>"The grass is always greener on the other side" is a natural phenomenon, but remember that the value of the other side is only high because it's unfamiliar, not because its actual value is higher than what we currently have.</li>
+            <li>When choosing between something new (explore) and something old (enjoy), we should prioritize the old (choose with higher probability), but occasionally still choose the new.</li>
+            <li>We should prioritize exploration when we have a lot of time and prioritize enjoyment when we don't have much time.</li>
+            <li>When reading restaurant/product reviews, besides the score, how many reviews there are is extremely important. If a review only has a few people rating it, whether the score is high or low, we can't trust the score too much.</li>
+            <li>We shouldn't give up hope completely on a restaurant just because of one bad experience, we should just choose to go there less often.</li>
+        </ul>
+        </section>
+        <section>
+        <h3>References</h3>
+        <ol>
+            <li><a href="https://www.goodreads.com/book/show/25666050-algorithms-to-live-by">Algorithms to live by</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Gittins_index">Gittins index</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">Multi-armed_bandit</a></li>
+        </ol>
+        </section>
+        </div>
+        </div>
+        </div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

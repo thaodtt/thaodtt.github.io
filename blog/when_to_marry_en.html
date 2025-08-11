@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>When to Marry</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><strong>Thao Do</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main section -->
+    <div class="container">
+    <div class="row custom-margin">
+        <section>
+        <h2>When to Marry? The Secretary Problem and Its Extensions</h2>
+        </section>
+        <div class="col-12 col-md-6 bg-light p-3">
+        <section>
+            <h3>Introduction</h3>
+            <p>In a life full of randomness, sometimes you have to make decisions without enough information: should you marry your current partner or wait for someone better? Should you buy this house or wait to see if there's a better house in the future? Should you sell your house at this price or wait for someone to offer a higher price? Should you hire this employee or interview more people? Should you work for this company or interview with other companies?</p>
+
+            <p>These problems are collectively called optimal stopping problems: deciding when to stop when you don't know if what you currently have is optimal. Mathematicians model this situation through the secretary problem.</p>
+
+        <h3>The Secretary Problem</h3>
+            
+            <p>Imagine you've just been promoted to department head and want to find the best secretary for you. Suppose:</p>
+            <ol>
+                <li>There are n applicants and you interview them in random order.</li>
+                <li>You don't know how good an applicant is compared to the general standard, you can only compare two applicants after interviewing both (so you can't know who is the best unless you've interviewed all n people).</li>
+                <li>You can hire an applicant immediately after the interview and that applicant will agree to take the job.</li>
+                <li>If you don't hire an applicant immediately after the interview, that applicant will leave and never return.</li>
+            </ol>
+            <figure class="blog-photo">
+                <img src="image/bao_gio_lay_chong.jpeg" alt="Image of the guys we meet in life">
+            </figure>
+            
+            <p>The difficulty of this problem is: if we hire too early (e.g., choosing immediately after interviewing 2-3 people), we'll likely miss potential candidates who come later. If we hire too late (waiting until only 2-3 people remain), we'll likely have missed the best person and lost our chance. So how do we balance these two concerns? Mathematics has proven that the optimal strategy is to skip the first 37% of applicants, then choose the first person who is better than everyone you've interviewed so far. With this method, you have a 37% chance of finding the best secretary. Why 37%? 37% = 1/2.718 = 1/e. Those interested in the specific formula can find more details here.</p>
+            
+            <h3>Extended Problems</h3>
+
+            <p>In reality, we don't always have all conditions 1-5, so how does the problem change?</p>
+
+            <p>Extension of assumption (1): In many situations, we can't know what n is. Who can predict how many guys or girls they'll meet and fall in love with in this lifetime? When buying a house, how can you know how many houses you'll see, and similarly when selling a house, it's hard to know how many people will want to buy. To overcome this, one approach is to estimate based on time. For example, with love, we can assume we'll start dating from age 18 to 34, so after 37% of the time, i.e., after age 24, you should marry someone better than your previous partners. When buying/selling a house, you can give yourself a maximum time of 1 year to find a seller/buyer, so after 37% = four and a half months, you'll start choosing the best house/highest bidder so far.</p>
+        </section>
+    </div>
+    <div class="col-12 col-md-6 bg-light p-3">
+    <section>
+            <p>Extension of assumption (2): If you can know how good an applicant is compared to others, your success rate will be higher. For example, you want to marry a rich person, so the best person for you is the one with the most money. Moreover, you've researched the average wealth/salary in your city, so when you meet someone, you'll immediately know if they're in the top 1%, 10%, or 50% of wealthy people. In this case, your optimal algorithm is: at each point in time, marry someone whose wealth/salary is higher than the expected wealth of the remaining candidates. For example, if you're older and currently dating someone with only time to date one more person, you'll marry your current partner if their wealth is above average. If you're young and can date 5 more people, you'll marry your current partner if they have wealth in the top 10%. Of course, this method doesn't account for the possibility that a poor person now might become rich in the future or vice versa. Other factors like beauty, generosity, humor... are harder to measure (except height and weight), but you can still estimate these factors based on personal experience. This algorithm is also effective for selling houses because usually your most important criterion is finding the highest bidder, but it's less effective when buying houses, because like finding a life partner, an ideal house has many factors that are hard to measure.</p>
+
+            <p>Extension of assumption (3): Not everyone you want to marry wants to marry you. In this case, you should reject fewer people initially and start proposing earlier because you'll likely have to propose to multiple people before being accepted. For example, if the person you propose to only accepts with a 50% probability, you should start proposing after meeting 25% of people.</p>
+
+            <p>Extension of assumption (4): You can go back and propose to an ex-partner. This isn't uncommon - many people realize after breaking up and dating several others that their ex was the best. In this case, you can reject more people initially and start proposing later. For example, if you can propose to an ex and they'll accept with a 50% probability, you should start proposing after meeting 61% of people.</p>
+
+        <h3>Conclusion</h3>
+
+            <p>In experiments, psychologists found that most people accept earlier than 37%, perhaps because waiting has its costs (women's beauty decreases over time, houses left too long will cost money for repairs and renovation...). However, if you accept too early before knowing what you want, you may have many regrets later. Next time you buy a house, car, sell a house, car... try applying the 37% principle to see if it works: reject the first 37% of opportunities, then choose the first opportunity that's better than all previous opportunities.</p>
+
+        <h3>References</h3>
+            <ol>
+            <li><a href="https://www.goodreads.com/book/show/25666050-algorithms-to-live-by">Algorithms to live by</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Secretary_problem">Secretary problem</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Optimal_stopping">Optimal stopping</a></li>
+            </ol>
+        </section>
+        </div>
+    </div>
+    </div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

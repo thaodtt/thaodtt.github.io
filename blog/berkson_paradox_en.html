@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Berkson's Paradox</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><strong>Thao Do</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main section -->
+    <div class="container">
+    <div class="row custom-margin">
+        <section>
+        <h2>Berkson's Paradox: Are talented people usually not beautiful and vice versa?</h2>
+        </section>
+        <div class="col-12 col-md-6 bg-light p-3">
+            <section>
+                <h3>Introduction</h3>
+            <p>Have you ever noticed that among your friends, those who are talented and academically excellent tend to have average looks, while those who are beautiful tend to have only average academic performance? When choosing partners, many girls notice that handsome guys are often less kind than those with average looks. Is there some special reason why it's hard for someone to have many good qualities at the same time?</p>
+
+            <p>Of course, you can find exceptions - there are friends who are both talented and beautiful, guys who are both handsome and kind-hearted, but this is a general observation: the average attractiveness of talented friends will be lower than the average attractiveness of non-talented friends. This observation may not apply to everyone, but it will be true for the majority.</p>
+        <h3>Berkson's Paradox</h3>
+
+            <p>This phenomenon in probability and statistics is called Berkson's Paradox. This paradox originated from a hospital study on diabetes and cholecystitis. The study found a negative correlation between the two diseases: people with diabetes were less likely to have cholecystitis than people without diabetes. Similarly, a recent study showed that among hospitalized patients, smokers were less likely to have severe COVID-19 than non-smokers. So does smoking reduce the risk of severe COVID infection requiring hospitalization? Does having diabetes reduce the risk of cholecystitis?</p>
+
+            <p>The answer is no! Many other studies show that diabetes increases the risk of other diseases, and smoking damages the lungs, thus increasing the risk of death and serious complications when infected with COVID. So why do we observe a negative correlation between smoking and COVID, or between diabetes and cholecystitis? Where does the paradox come from?</p>
+
+            <p>The key point here is that the data was collected in hospitals. People had to be hospitalized because they were sick for some reason. If a patient without diabetes still had to be hospitalized, the likelihood that they had cholecystitis was higher than those with diabetes. A person without COVID who had to be hospitalized was more likely to be a smoker than normal. When we expand the data to the entire population, the negative correlation between these factors disappears.</p>
+
+            <h3>Talent and Beauty</h3>
+
+            <p>Returning to the initial example, is there really a negative correlation between beauty and talent, or between handsomeness and kindness? This is only true because these are your personal observations, not from the entire population. Imagine, would you ever agree to date a guy who is both unattractive and unkind? The answer is usually no. So in your observations, the guys you pay attention to must be either handsome or kind-hearted. Therefore, you will see that handsome people are less kind and vice versa. There will still be guys who are both handsome and kind (hopefully all sisters will meet someone like that), but the number of such guys is rarer than those who have only one of the two good qualities. Similarly, when asking about people around you, you will tend to notice people who are either talented or beautiful, while those who have neither are not noteworthy and you may not have befriended them from the beginning.</p>
+        </section>
+    </div>
+    <div class="col-12 col-md-6 bg-light p-3">
+    <section>
+            <figure class="blog-photo">
+                <img src="image/nghich_ly_berkson.jpeg" alt="Illustration of talent vs beauty">
+            </figure>
+            
+
+            <p>As illustrated in the figure, the distribution of talent and beauty levels is initially independent of each other (the figure has 9 evenly distributed points), but if you only befriend people who are either talented or beautiful (the orange points), then you will see that talented friends are less attractive than non-talented ones. Indeed, suppose beauty levels are 1, 2, 3, then your three talented friends have an average beauty of (1+2+3)/3 = 2, while your three remaining less talented friends have an average beauty of (3+3+2)/3 = 2.66, which is greater than 2.</p>
+
+        <h3>Conclusion</h3>
+
+            <p>What's the use of understanding Berkson's Paradox? If you do research in biology, medicine, etc., understanding this paradox, as well as many other probability paradoxes, is extremely important so that you don't make hasty conclusions like smoking reduces the likelihood of severe COVID infection. In everyday life, when you have an observation like talented people are not beautiful, you should stop and think whether this is true for everyone (you can google for serious research) instead of drawing conclusions based on intuition because your intuition may contain unpredictable errors.</p>
+
+            <p>Note: this article is not based on any serious research results on the relationship between beauty and talent; the concepts of 'beauty', 'talent' and 'kindness' are all relative and not clearly defined. The purpose of Berkson's Paradox is to show that even though two characteristics have no relationship with each other, we can still observe a negative correlation if our observation set is not the same as the general population.</p>
+
+            <p>So what do you think? In reality, will talent and beauty have a positive or negative correlation with each other?</p>
+
+        <h3>References</h3>
+            <ol>
+                <li><a href="https://en.wikipedia.org/wiki/Berkson%27s_paradox">Berkson paradox</a></li>
+                <li><a href="https://www.goodreads.com/book/show/18693884-how-not-to-be-wrong">How not to be wrong</a></li>
+            </ol>
+        </section>
+        </div>
+        </div>
+        </div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

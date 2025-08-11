@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cat Breed Analysis</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* Responsive plot container */
+            .plot-container {
+                height: 620px;
+                min-height: 300px;
+            }
+            
+            @media (max-width: 768px) {
+                .plot-container {
+                    height: 320px;
+                }
+            }
+            
+            /* Ensure iframe is fully responsive */
+            .plot-container iframe {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <!-- Hero Section -->
+    <div class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80'); background-size: cover; background-position: center; height: 350px;">
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+            <div class="text-center text-white">
+                <h1 class="display-4 mb-3">Cat Breed Clustering Analysis</h1>
+                <p class="lead">Discovering personality patterns across feline breeds using machine learning</p>
+                <div class="mt-4">
+                    <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                         class="rounded-circle mx-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Cat 1">
+                    <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                         class="rounded-circle mx-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Cat 2">
+                    <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                         class="rounded-circle mx-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Cat 3">
+                    <img src="https://images.unsplash.com/photo-1615789591457-74a63395c990?w=80&h=80&fit=crop&crop=face&auto=format&q=80" 
+                         class="rounded-circle mx-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Cat 4">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="bg-light p-3">
+                <h3><span>Interactive Visualization</span></h3>
+                <p>The plot below shows different cat breeds clustered based on their overall energy and afffectionate characteristics. Each point represents a cat breed, and the colors indicate different clusters identified through machine learning algorithms.</p>
+                
+                <!-- Embed the interactive plot -->
+                <div class="plot-container" style="width: 100%; overflow: auto;">
+                    <iframe src="cat_breed/cat_breeds_interactive_plot.html" 
+                            style="width: 100%; height: 100%; border: none;"
+                            title="Cat Breed Interactive Plot">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 col-md-6">
+            <div class="bg-light p-3 position-relative">
+                <div class="position-absolute" style="top: 15px; right: 15px; opacity: 0.15;">
+                    <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=80&h=80&fit=crop&auto=format&q=80" 
+                         class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover;" alt="Decorative cat">
+                </div>
+                <h3><span>Methodology</span></h3>
+                
+                <div class="d-flex align-items-start">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=60&h=60&fit=crop&auto=format&q=80" 
+                         class="rounded-circle mr-3 mt-1" style="width: 40px; height: 40px; object-fit: cover;" alt="Data collection">
+                    <div>
+                        <h4>Data Collection</h4>
+                        <p>We queried a Large Language Model (LLM) to obtain ratings for various traits across many different cat breeds. 
+                            This step can also be done via scaping data from some cat database website such as <a href="https://cfa.org/breeds/">CFA</a> or <a href="https://tica.org/ticas-breeds/browse-all-breeds/">TICA</a>.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-start mt-4">
+                    <img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?w=60&h=60&fit=crop&auto=format&q=80" 
+                         class="rounded-circle mr-3 mt-1" style="width: 40px; height: 40px; object-fit: cover;" alt="PCA analysis">
+                    <div>
+                        <h4>Dimensionality Reduction</h4>
+                        <p>Given the high-dimensional nature of our trait data, we applied <strong>Principal Component Analysis (PCA)</strong> to reduce the data to 2 dimensions. This allows us to visualize the relationships between cat breeds while preserving the most important variance in the data.</p>
+                        <p>The two principal components that we plot are defined as linear combinations of the original traits:</p>
+                        
+                        <div class="mt-3 mb-3 p-3" style="background-color: #f8f9fa; border-left: 4px solid #007bff;">
+                            <p><strong>PC1 (Overall Energy Level):</strong></p>
+                            <p class="ml-3" style="font-family: 'Courier New', monospace; font-size: 0.9em;">
+                                PC1 = 0.183 × Affection + 0.538 × Playfulness + 0.481 × Energy + 0.582 × Vocalness + 0.328 × Intelligence
+                            </p>
+                            
+                            <p class="mt-3"><strong>PC2 (Overall Affectionate):</strong></p>
+                            <p class="ml-3" style="font-family: 'Courier New', monospace; font-size: 0.9em;">
+                                PC2 = 0.588 × Affection - 0.139 × Playfulness - 0.555 × Energy + 0.527 × Vocalness - 0.221 × Intelligence
+                            </p>
+                        </div>
+                        
+                        <p><small class="text-muted">These components explain the maximum variance in the original 5-dimensional trait space, allowing us to visualize breed relationships in 2D while preserving the most important information.</small></p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-start mt-4">
+                    <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=60&h=60&fit=crop&auto=format&q=80" 
+                         class="rounded-circle mr-3 mt-1" style="width: 40px; height: 40px; object-fit: cover;" alt="Clustering analysis">
+                    <div>
+                        <h4>Clustering Analysis</h4>
+                        <p>We used the <strong>K-means clustering algorithm</strong> to identify natural groupings of cat breeds based on the two principle traits that we have indentified in the previous step. 
+                            To determine the optimal number of clusters, we employed the <strong>Within-Cluster Sum of Squares (WCSS) method</strong>, also known as the elbow method.</p>
+                        
+                        <div class="text-center mt-3 mb-3">
+                            <img src="cat_breed/kmean_wcss.jpg" alt="WCSS Elbow Method Plot" class="img-fluid" style="max-width: 100%; height: auto;">
+                            <p class="text-muted mt-2"><small>WCSS plot showing the elbow at k=4, indicating the optimal number of clusters</small></p>
+                        </div>
+                        
+                        <p>The WCSS plot above clearly shows an "elbow" at k=4, confirming that 4 clusters provide the optimal balance between model complexity and explanatory power for our cat breed dataset.</p>
+                        <p><a href="https://github.com/thaodtt/thaodtt.github.io/blob/main/cat_breed/make_plot.py">Source code can be found here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-6">
+            <div class="bg-light p-3">
+                <h3><span>Conclusion</span></h3>
+                <p>Our analysis successfully identified <strong>4 distinct clusters</strong> of cat breeds based on their overall energy levels and related characteristics:</p>
+                <ul>
+                    <li><strong>High Energy, High Affectionate Cluster:</strong> Breeds that are both very active, playful, and very affectionate and very intelligent.
+                        <div class="row mt-3 mb-3 no-gutters">
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Siamese_grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Siamese"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Burmese_grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Burmese"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Sphynx_grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Sphynx"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Oriental_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Oriental Shorthair"></div>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Breeds:</strong>
+                            <a href="https://cfa.org/breed/siamese" target="_blank">Siamese</a>, 
+                            <a href="https://cfa.org/breed/burmese" target="_blank">Burmese</a>, 
+                            <a href="https://cfa.org/breed/sphynx" target="_blank">Sphynx</a>, 
+                            <a href="https://cfa.org/breed/oriental-shorthair" target="_blank">Oriental Shorthair</a>, 
+                            <a href="https://cfa.org/breed/balinese" target="_blank">Balinese</a>, 
+                            <a href="https://cfa.org/breed/devon-rex" target="_blank">Devon Rex</a>, 
+                            <a href="https://cfa.org/breed/tonkinese" target="_blank">Tonkinese</a>, 
+                            <a href="https://cfa.org/breed/oriental-longhair" target="_blank">Oriental Longhair</a>
+                        </div>
+                        
+                    </li>
+                    <li class="mt-3"><strong>High Energy, Moderate Affectionate Cluster:</strong> Breeds that are very active, energetic but not as affectionate and not as intelligent.
+                        <div class="row mt-3 mb-3 no-gutters">
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/BengalGrid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Bengal"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/01/AbyssinianGrid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Abyssinian"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Cornish-RexGrid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Cornish Rex"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Egyptian-Mau_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Egyptian Mau"></div>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Breeds:</strong>
+                            <a href="https://cfa.org/breed/bengal" target="_blank">Bengal</a>, 
+                            <a href="https://cfa.org/breed/abyssinian" target="_blank">Abyssinian</a>, 
+                            <a href="https://cfa.org/breed/cornish-rex" target="_blank">Cornish Rex</a>, 
+                            <a href="https://cfa.org/breed/egyptian-mau" target="_blank">Egyptian Mau</a>, 
+                            <a href="https://cfa.org/breed/japanese-bobtail" target="_blank">Japanese Bobtail</a>, 
+                            <a href="https://cfa.org/breed/ocicat" target="_blank">Ocicat</a>, 
+                            <a href="https://cfa.org/breed/savannah" target="_blank">Savannah</a>, 
+                            <a href="https://cfa.org/breed/somali" target="_blank">Somali</a>, 
+                            <a href="https://cfa.org/breed/chausie" target="_blank">Chausie</a>
+                        </div>
+                    </li>
+                    <li class="mt-3"><strong>Moderate Energy Cluster:</strong> Breeds that are relatively calm, they are moderate in both energy and affectionate levels.
+                        <div class="row mt-3 mb-3 no-gutters">
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/MaineCoon_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Maine Coon"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Turkish-Van_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Turkish Van"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Havana-Brown_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Havana Brown"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/LaPerm_grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="LaPerm"></div>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Breeds:</strong>
+                            <a href="https://cfa.org/breed/maine-coon" target="_blank">Maine Coon</a>, 
+                            <a href="https://cfa.org/breed/turkish-van" target="_blank">Turkish Van</a>, 
+                            <a href="https://cfa.org/breed/havana-brown" target="_blank">Havana Brown</a>, 
+                            <a href="https://cfa.org/breed/laperm" target="_blank">LaPerm</a>, 
+                            <a href="https://cfa.org/breed/pixiebob" target="_blank">Pixiebob</a>, 
+                            <a href="https://cfa.org/breed/siberian" target="_blank">Siberian</a>, 
+                            <a href="https://cfa.org/breed/singapura" target="_blank">Singapura</a>, 
+                            <a href="https://cfa.org/breed/snowshoe" target="_blank">Snowshoe</a>, 
+                            <a href="https://cfa.org/breed/turkish-angora" target="_blank">Turkish Angora</a>, 
+                            <a href="https://cfa.org/breed/khao-manee" target="_blank">Khao Manee</a>, 
+                            <a href="https://cfa.org/breed/korat" target="_blank">Korat</a>, 
+                            <a href="https://cfa.org/breed/munchkin" target="_blank">Munchkin</a>
+                        </div>
+                        
+                    </li>
+                    <li class="mt-3"><strong>Low Energy Cluster:</strong> Breeds that are generally sedentary, preferring rest and gentle interaction. Within this cluster some can be more affectionate than others.
+                        <div class="row mt-3 mb-3 no-gutters">
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Ragdoll_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Ragdoll"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Scottish_fold_grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Scottish Fold"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/British-Shorthair_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="British Shorthair"></div>
+                            <div class="col-3"><img src="https://cfa.org/wp-content/uploads/2024/02/Russian_blue_Grid.jpg" class="img-fluid" style="width: 100%; height: 90px; object-fit: cover;" alt="Russian Blue"></div>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Breeds:</strong>
+                            <a href="https://cfa.org/breed/ragdoll" target="_blank">Ragdoll</a>, 
+                            <a href="https://cfa.org/breed/scottish-fold" target="_blank">Scottish Fold</a>, 
+                            <a href="https://cfa.org/breed/british-shorthair" target="_blank">British Shorthair</a>, 
+                            <a href="https://cfa.org/breed/norwegian-forest" target="_blank">Norwegian Forest</a>, 
+                            <a href="https://cfa.org/breed/russian-blue" target="_blank">Russian Blue</a>, 
+                            <a href="https://cfa.org/breed/manx" target="_blank">Manx</a>, 
+                            <a href="https://cfa.org/breed/ragamuffin" target="_blank">Ragamuffin</a>, 
+                            <a href="https://cfa.org/breed/selkirk-rex" target="_blank">Selkirk Rex</a>, 
+                            <a href="https://cfa.org/breed/american-shorthair" target="_blank">American Shorthair</a>, 
+                            <a href="https://cfa.org/breed/british-longhair" target="_blank">British Longhair</a>, 
+                            <a href="https://cfa.org/breed/cymric" target="_blank">Cymric</a>, 
+                            <a href="https://cfa.org/breed/nebelung" target="_blank">Nebelung</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h4>Implications</h4>
+                <p>It is somewhat surprising that affectionate and energy are not independent criteria for the clustering: the naive approach to making 4 clusters would be high/low energy + high/low affectionate. 
+                    Instead, energy level seems to be a more prominent feature. </p>
+                <p>This clustering analysis provides valuable insights for perspective cat parents so that they can make informed decisions about which breeds might be the best fit for their living situation, activity level, and lifestyle preferences.
+                    If they like one breed which is not available, they can find the similar breeds using our clustering.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="bg-light p-3 text-center">
+                <p><a href="index.html">← Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
